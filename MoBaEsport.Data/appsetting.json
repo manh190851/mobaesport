@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "ESportDbContext": "Server=.;Database=ESport;Trusted_Connection=True;"
+  }
+}
