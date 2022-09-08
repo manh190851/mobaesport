@@ -8,7 +8,7 @@ namespace MoBaEsport.Application.Model.MessageModel
 {
     public interface IManageMessage
     {
-        Task<int> Create(Guid userId, MessageCreateModel model, long chatboxId);
+        Task<int> Create(MessageCreateModel model, long chatboxId);
 
         Task<int> Delete(Guid userId, long messageId);
     }

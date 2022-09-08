@@ -1,5 +1,7 @@
 ﻿using MoBaEsport.Application.Model.CommentModel;
 using MoBaEsport.Application.Model.ReactionModel;
+using MoBaEsport.Data.DBContextModel;
+using MoBaEsport.Data.EntityModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +12,68 @@ namespace MoBaEsport.Application.Model.PostModel
 {
     public class PublicPost : IPublicPost
     {
-        public Task<int> Create(Guid userId, PostCreateModel model)
+        private ESportDbContext db;
+
+        public PublicPost(ESportDbContext context)
         {
-            throw new NotImplementedException();
+            this.db = context;
         }
 
-        public Task<int> Delete(Guid userId, long PostId)
+        public async Task<int> Create(PostCreateModel model)
         {
-            throw new NotImplementedException();
+            var post = new Post()
+            {
+                PostId = model.PostId,
+                PostContent = model.PostContent,
+                Created = model.Created,
+                Status = model.Status,
+                ShareCount = model.ShareCount,
+                SharePostId = model.SharePostId,
+                UserId = model.UserId
+            };
+
+            db.Posts.Add(post);
+            
+            return await db.SaveChangesAsync();
         }
 
-        public Task<int> Update(Guid userId, PostUpdateModel model, long PostId)
+        public async Task<int> Delete(Guid userId, long PostId)
         {
-            throw new NotImplementedException();
+            var post = db.Posts.Find(PostId);
+
+            if (post == null) throw new Exception("Can not Find!!");
+
+            if (post.UserId != userId) throw new Exception("Can not delete other people's post!!");
+
+            db.Posts.Remove(post);
+            return await db.SaveChangesAsync();
         }
 
-        public Task<List<PostViewModel>> ViewPosts(Guid userId)
+        public async Task<int> Update(Guid userId, PostUpdateModel model, long PostId)
         {
-            throw new NotImplementedException();
+            var post = db.Posts.Find(PostId);
+
+            if (post == null) throw new ArgumentNullException();
+
+            post.PostContent = model.PostContent;
+            post.Status = model.Status;
+            post.Created = model.Created;
+
+            return await db.SaveChangesAsync();
         }
 
-        public Task<bool> HiddenPost(long PostId)
+        public Task<List<Post>> ViewPosts(Guid userId)
         {
-            throw new NotImplementedException();
+           return (Task<List<Post>>)db.Posts.ToList().Where(m => m.UserId == userId);
+        }
+
+        public async Task<int> HiddenPost(long PostId)
+        {
+            var post = db.Posts.Find(PostId);
+
+            post.IsHidden = true;
+
+            return await db.SaveChangesAsync();
         }
 
         public Task<int> ReportPost(long PostId)
@@ -40,19 +81,44 @@ namespace MoBaEsport.Application.Model.PostModel
             throw new NotImplementedException();
         }
 
-        public Task<int> SharePost(long PostId, PostCreateModel model)
+        public async Task<int> ShareCount(long postId)
         {
-            throw new NotImplementedException();
+            var post = await db.Posts.FindAsync(postId);
+
+            var shareposts = from sharepost in db.Posts
+                             where sharepost.SharePostId == postId
+                             select sharepost;
+
+            post.ShareCount = shareposts.Count();
+
+            return await db.SaveChangesAsync();
         }
 
-        public Task<List<CommentViewModel>> ViewComment()
+        public Task<List<Comment>> ViewComment(long postId)
         {
-            throw new NotImplementedException();
+            var comments = from comment in db.Comments
+                           where comment.PostId == postId
+                           select comment;
+
+            return (Task<List<Comment>>)comments;
         }
 
-        public Task<List<ReactionViewModel>> ViewReaction()
+        public Task<List<Reaction>> ViewReaction(long postId)
         {
-            throw new NotImplementedException();
+            var reactions = from reaction in db.Reactions
+                           where reaction.PostId == postId
+                           select reaction;
+
+            return (Task<List<Reaction>>)reactions;
+        }
+
+        public async Task<long> CountReaction(long PostId)
+        {
+            var post = db.Posts.Find(PostId);
+
+            long reacCount = post.Reactions.Count();
+
+            return reacCount;
         }
     }
 }

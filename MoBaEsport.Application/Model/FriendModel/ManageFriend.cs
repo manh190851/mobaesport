@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoBaEsport.Data.DBContextModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,13 @@ namespace MoBaEsport.Application.Model.FriendModel
 {
     public class ManageFriend : IManageFriend
     {
+        private ESportDbContext db;
+
+        public ManageFriend(ESportDbContext db)
+        {
+            this.db = db;
+        }
+
         public Task<int> Create(Guid userId, FriendCreateModel model, Guid TargetId)
         {
             throw new NotImplementedException();
@@ -18,7 +26,7 @@ namespace MoBaEsport.Application.Model.FriendModel
             throw new NotImplementedException();
         }
 
-        public  Task SendFriendRequest (Guid userId, Guid TargetId) 
+        public Task SendFriendRequest (Guid userId, Guid TargetId) 
         { 
             throw new NotImplementedException(); 
         }

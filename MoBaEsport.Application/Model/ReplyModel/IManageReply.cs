@@ -8,9 +8,9 @@ namespace MoBaEsport.Application.Model.ReplyModel
 {
     public interface IManageReply
     {
-        Task<int> Create(Guid userId, ReplyCreateModel model);
+        Task<int> Create(ReplyCreateModel model);
 
-        Task<int> Update(Guid userId, ReplyUpdateModel model, long replyId);
+        Task<int> Update(ReplyUpdateModel model, long replyId);
 
         Task<int> Delete(Guid userId, long replyId);
     }

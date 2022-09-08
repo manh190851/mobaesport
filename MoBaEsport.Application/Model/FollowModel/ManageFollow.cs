@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MoBaEsport.Data.DBContextModel;
+using MoBaEsport.Data.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +10,39 @@ namespace MoBaEsport.Application.Model.FollowModel
 {
     public class ManageFollow : IManageFollow
     {
-        public Task<int> Create(Guid userId, FollowCreateModel model, Guid TargetId)
+        private ESportDbContext db;
+
+        public ManageFollow(ESportDbContext db)
         {
-            throw new NotImplementedException();
+            this.db = db;
         }
 
-        public Task<int> Delete(Guid userId, long followId)
+        public async Task<int> Create(FollowCreateModel model)
         {
-            throw new NotImplementedException();
+            var follow = new Follow()
+            {
+                FollowId = model.FollowId,
+                FollowerId = model.FollowerId,
+                FollowingId = model.FollowingId,
+                Created = model.Created
+            };
+
+            db.Follows.Add(follow);
+
+            return await db.SaveChangesAsync();
+        }
+
+        public async Task<int> Delete(Guid userId, long followId) //Un follow
+        {
+            var follow = db.Follows.Find(followId);
+
+            if (follow == null) throw new Exception();
+
+            if (follow.FollowerId != userId) throw new Exception();
+
+            db.Follows.Remove(follow);
+
+            return await db.SaveChangesAsync();
         }
     }
 }

@@ -8,9 +8,9 @@ namespace MoBaEsport.Application.Model.CommentModel
 {
     public interface IManageComment
     {
-        Task<int> Create(Guid userId, CommentCreateModel model);
+        Task<int> Create(CommentCreateModel model);
 
-        Task<int> Update(Guid userId, CommentUpdateModel model, long commentId);
+        Task<int> Update(CommentUpdateModel model, long commentId);
 
         Task<int> Delete(Guid userId, long commentId);
     }
