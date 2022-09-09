@@ -49,7 +49,7 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Update(Guid userId, PostUpdateModel model, long PostId)
+        public async Task<int> Update(PostUpdateModel model, long PostId)
         {
             var post = db.Posts.Find(PostId);
 
@@ -62,9 +62,21 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public Task<List<Post>> ViewPosts(Guid userId)
+        public async Task<List<PostViewModel>> ViewPostsByUserId(Guid userId)
         {
-           return (Task<List<Post>>)db.Posts.ToList().Where(m => m.UserId == userId);
+            var posts = db.Posts.ToList().Where(m => m.UserId == userId);
+
+            if (posts == null) throw new Exception(String.Format("Can not find any post with id:{0} ", userId));
+
+            var postViewModels = new List<PostViewModel>();
+
+            foreach(var post in posts)
+            {
+                var postModel = await GetPost(post);
+                postViewModels.Add(postModel);
+            }
+
+            return postViewModels;
         }
 
         public async Task<int> HiddenPost(long PostId)
@@ -76,9 +88,15 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public Task<int> ReportPost(long PostId)
+        public async Task GetReportPost(long postId)
         {
-            throw new NotImplementedException();
+            var post = db.Posts.Find(postId);
+
+            if (post == null) throw new Exception("Not Found");
+
+            post.Status = Data.Enum.PostStatus.Reporting;
+
+            await db.SaveChangesAsync();
         }
 
         public async Task<int> ShareCount(long postId)
@@ -94,36 +112,103 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public Task<List<Comment>> ViewComment(long postId)
+        public async Task<List<CommentViewModel>> ViewComment(long postId)
         {
-            var comments = from comment in db.Comments
-                           where comment.PostId == postId
-                           select comment;
+            var comments = db.Comments.ToList().Where(m => m.PostId == postId);
 
-            return (Task<List<Comment>>)comments;
+            if (comments.Count() == 0) throw new Exception("Not Found!!");
+
+            var listComment = new List<CommentViewModel>();
+
+            foreach(var comment in comments)
+            {
+                var commentModel = await GetComment(comment);
+                listComment.Add(commentModel);
+            }
+            return listComment;
         }
 
-        public Task<List<Reaction>> ViewReaction(long postId)
+        public async Task<List<ReactionViewModel>> ViewReaction(long postId)
         {
-            var reactions = from reaction in db.Reactions
-                           where reaction.PostId == postId
-                           select reaction;
+            var reactions = db.Reactions.ToList().Where(m => m.PostId == postId);
 
-            return (Task<List<Reaction>>)reactions;
+            if (reactions.Count() == 0) throw new Exception("Not Found");
+
+            var listReaction = new List<ReactionViewModel>();
+
+            foreach(var reaction in reactions)
+            {
+                var reactionModel = await GetReaction(reaction);
+                listReaction.Add(reactionModel);
+            }
+            return listReaction;
         }
 
-        public async Task<long> CountReaction(long PostId)
+        public async Task<List<PostViewModel>> ViewPublicPost()
         {
-            var post = db.Posts.Find(PostId);
+            var posts = db.Posts.ToList().Where(m => m.IsHidden = false);
 
-            long reacCount = post.Reactions.Count();
+            if (posts.Count() == 0) throw new Exception("Not Found!!");
 
-            return reacCount;
+            var list = new List<PostViewModel>();
+
+            foreach(var post in posts)
+            {
+                var postmodel = await GetPost(post);
+                list.Add(postmodel);
+            }
+            return list;
         }
 
-        public async Task<int> Get()
+        public async Task<int> OpenPost(long postId)
         {
-            return 1;
+            throw new NotImplementedException();
+        }
+
+        public async Task<PostViewModel> GetPost(Post post)
+        {
+            if (post == null) throw new ArgumentNullException(nameof(post));
+
+            PostViewModel postViewModel = new PostViewModel()
+            {
+                PostContent = post.PostContent,
+                Status = post.Status,
+                Created = post.Created,
+                ShareCount = post.ShareCount,
+                SharePostId = post.SharePostId,
+                UserId = post.UserId,
+            };
+
+            return postViewModel;
+        }
+
+        public async Task<CommentViewModel> GetComment(Comment comment)
+        {
+            if (comment == null) throw new ArgumentNullException(nameof(comment));
+
+            CommentViewModel commentViewModel = new CommentViewModel()
+            {
+                Content = comment.Content,
+                Created = comment.Created,
+                PostId = comment.PostId,
+                UserId = comment.UserId
+            };
+
+            return commentViewModel;
+        }
+
+        public async Task<ReactionViewModel> GetReaction(Reaction reaction)
+        {
+            if (reaction == null) throw new ArgumentNullException(nameof(reaction));
+
+            ReactionViewModel reactionViewModel = new ReactionViewModel()
+            {
+                ReacName = reaction.ReacName,
+                Created = reaction.Created,
+                UserId = reaction.UserId
+            };
+
+            return reactionViewModel;
         }
     }
 }

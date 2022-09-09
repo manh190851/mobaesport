@@ -13,7 +13,10 @@ builder.Services.AddDbContext<ESportDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddTransient<IManagePost, ManagePost>();
+builder.Services.AddTransient<IPublicPost, PublicPost>();
 builder.Services.AddTransient<PublicPost, PublicPost>();
+
 
 //Add Swagger
 builder.Services.AddSwaggerGen(options =>

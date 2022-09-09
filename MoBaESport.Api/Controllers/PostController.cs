@@ -10,21 +10,39 @@ namespace MoBaESport.Api.Controllers
     {
         private readonly IPublicPost _publicPost;
         private readonly PublicPost _post;
+        private readonly IManagePost _managePost;
 
-        public PostController(IPublicPost publicPost)
+        public PostController(IPublicPost publicPost, PublicPost post, IManagePost managePost)
         {
             _publicPost = publicPost;
-        }
-
-        public PostController(PublicPost post)
-        {
             _post = post;
+            _managePost = managePost;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Test()
+        public async Task<IActionResult> ViewPost(Guid userId)
         {
-            return Ok("Fine");
+            var posts = await _post.ViewPosts(userId);
+
+            if (posts == null) return NotFound("Can not find!!");
+
+            return Ok(posts.ToList());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm]PostCreateModel model)
+        {
+            var post = await _publicPost.Create(model);
+
+            if (post == 0) return BadRequest();
+
+            return CreatedAtAction(nameof(ViewPost), post);
+        }
+
+        [HttpPut("{postId}")]
+        public async Task<IActionResult> Update(long postId,[FromForm]PostUpdateModel model)
+        {
+            var post = await _publicPost.Update()
         }
     } 
 }

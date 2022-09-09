@@ -37,7 +37,8 @@ namespace MoBaEsport.Data.Enum
         Friend,
         Private,
         Locked,
-        Hidden
+        Hidden,
+        Reporting
     }
 
     public enum Reactions
