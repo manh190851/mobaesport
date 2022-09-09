@@ -16,5 +16,7 @@ namespace MoBaEsport.Application.Model.PostModel
         Task<int> Delete(Guid userId, long PostId);
 
         Task<List<Post>> ViewPosts(Guid userId);
+
+        Task<int> Get();
     }
 }

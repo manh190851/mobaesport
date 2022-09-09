@@ -1,7 +1,29 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using MoBaEsport.Application.Model.PostModel;
+using MoBaEsport.Data.DBContextModel;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("ESportDbContext");
+
 // Add services to the container.
+builder.Services.AddDbContext<ESportDbContext>(options =>
+   options.UseSqlServer(connectionString));
+
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<PublicPost, PublicPost>();
+
+//Add Swagger
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "MoBaESport Api",
+    });
+});
 
 var app = builder.Build();
 
@@ -19,6 +41,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Use Swagger
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "MoBaESport v1");
+});
 
 app.MapControllerRoute(
     name: "default",

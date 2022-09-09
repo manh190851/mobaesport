@@ -1,0 +1,15 @@
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\bin\Debug\net6.0\MoBaEsport.Application.deps.json
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\bin\Debug\net6.0\MoBaEsport.Application.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\bin\Debug\net6.0\MoBaEsport.Application.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\bin\Debug\net6.0\MoBaEsport.Data.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\bin\Debug\net6.0\MoBaEsport.Data.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.csproj.AssemblyReference.cache
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.AssemblyInfoInputs.cache
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.AssemblyInfo.cs
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.csproj.CoreCompileInputs.cache
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.csproj.CopyComplete
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\refint\MoBaEsport.Application.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\MoBaEsport.Application.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaEsport.Application\obj\Debug\net6.0\ref\MoBaEsport.Application.dll

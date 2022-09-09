@@ -120,5 +120,10 @@ namespace MoBaEsport.Application.Model.PostModel
 
             return reacCount;
         }
+
+        public async Task<int> Get()
+        {
+            return 1;
+        }
     }
 }
