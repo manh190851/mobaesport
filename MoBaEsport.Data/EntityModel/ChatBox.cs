@@ -10,9 +10,8 @@ namespace MoBaEsport.Data.EntityModel
     {
         public long ChatBoxId { get; set; }
         public List<Message>? Messages { get; set; }
-        public Guid OwnerId { get; set; }
-        public AppUser BoxOwner { get; set; }
-        public Guid ChatWithId { get; set; }
-        public AppUser ChatWithUser { get; set; }
+        public long FriendId { get; set; }
+        public Friend FriendIdInChatBox { get; set; }
+        public string ChatBoxColor { get; set; }
     }
 }

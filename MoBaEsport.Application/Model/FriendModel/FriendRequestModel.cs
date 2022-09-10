@@ -11,7 +11,8 @@ namespace MoBaEsport.Application.Model.FriendModel
     {
         public Guid RequestId { get; set; } //User who want to make friend with
         public AppUser Requester { get; set; }
-        public Guid AcceptId { get; set; }
+        public Guid TargetId { get; set; }
+        public AppUser Target { get; set; }
         public DateTime Created { get; set; }
     }
 }

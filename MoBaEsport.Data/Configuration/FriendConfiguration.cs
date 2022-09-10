@@ -17,6 +17,7 @@ namespace MoBaEsport.Data.Configuration
 
             builder.HasOne(m => m.AcceptUser).WithMany(m => m.AcceptFriends).HasForeignKey(m => m.AcceptId);
             builder.HasOne(m => m.RequestUser).WithMany(m => m.RequestFriends).HasForeignKey(m => m.RequestId);
+            builder.HasOne(m => m.ChatBox).WithOne(m => m.FriendIdInChatBox).HasForeignKey<ChatBox>(m => m.FriendId);
         }
     }
 }

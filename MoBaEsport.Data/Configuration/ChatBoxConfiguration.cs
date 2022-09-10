@@ -12,9 +12,7 @@ namespace MoBaEsport.Data.Configuration
 
             builder.HasKey(m => m.ChatBoxId);
 
-            builder.HasOne(m => m.BoxOwner).WithMany(m => m.OwnerChatBoxes).HasForeignKey(m => m.OwnerId);
-
-            builder.HasOne(m => m.ChatWithUser).WithMany(m => m.ChatBoxes).HasForeignKey(m => m.ChatWithId);
+            builder.Property(m => m.ChatBoxColor);
         }
     }
 }

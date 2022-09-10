@@ -1,4 +1,5 @@
-﻿using MoBaEsport.Data.DBContextModel;
+﻿using MoBaEsport.Application.Model.ReactionModel;
+using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,11 @@ namespace MoBaEsport.Application.Model.ReplyModel
             return await db.SaveChangesAsync();
         }
 
+        public Task<ReactionViewModel> GetReaction(Reaction reactoget)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> Update(ReplyUpdateModel model, long replyId)
         {
             var reply = db.Replies.Find(replyId);
@@ -58,6 +64,11 @@ namespace MoBaEsport.Application.Model.ReplyModel
             db.Replies.Update(reply);
 
             return await db.SaveChangesAsync();
+        }
+
+        public Task<List<ReactionViewModel>> ViewListReaction(long replyId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

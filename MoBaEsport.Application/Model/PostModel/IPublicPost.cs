@@ -25,7 +25,7 @@ namespace MoBaEsport.Application.Model.PostModel
 
         Task<int> OpenPost(long postId);
 
-        Task<PostViewModel> GetReportPost(long postId);
+        Task GetReportPost(long postId);
 
         Task<List<CommentViewModel>> ViewComment(long postId);
 

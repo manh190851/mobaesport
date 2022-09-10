@@ -22,7 +22,7 @@ namespace MoBaESport.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> ViewPost(Guid userId)
         {
-            var posts = await _post.ViewPosts(userId);
+            var posts = await _publicPost.ViewPostsByUserId(userId);
 
             if (posts == null) return NotFound("Can not find!!");
 
@@ -39,10 +39,10 @@ namespace MoBaESport.Api.Controllers
             return CreatedAtAction(nameof(ViewPost), post);
         }
 
-        [HttpPut("{postId}")]
-        public async Task<IActionResult> Update(long postId,[FromForm]PostUpdateModel model)
+        //[HttpPut("{postId}")]
+        /*public async Task<IActionResult> Update(long postId,[FromForm]PostUpdateModel model)
         {
-            var post = await _publicPost.Update()
-        }
+            var post = await _publicPost.Update();
+        }*/
     } 
 }

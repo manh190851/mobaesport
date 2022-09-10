@@ -245,17 +245,17 @@ namespace MoBaEsport.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ChatBoxId"), 1L, 1);
 
-                    b.Property<Guid>("ChatWithId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ChatBoxColor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OwnerId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("FriendId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("ChatBoxId");
 
-                    b.HasIndex("ChatWithId");
-
-                    b.HasIndex("OwnerId");
+                    b.HasIndex("FriendId")
+                        .IsUnique();
 
                     b.ToTable("ChatBoxs", (string)null);
                 });
@@ -489,21 +489,13 @@ namespace MoBaEsport.Data.Migrations
 
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.ChatBox", b =>
                 {
-                    b.HasOne("MoBaEsport.Data.EntityModel.AppUser", "ChatWithUser")
-                        .WithMany("ChatBoxes")
-                        .HasForeignKey("ChatWithId")
+                    b.HasOne("MoBaEsport.Data.EntityModel.Friend", "FriendIdInChatBox")
+                        .WithOne("ChatBox")
+                        .HasForeignKey("MoBaEsport.Data.EntityModel.ChatBox", "FriendId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MoBaEsport.Data.EntityModel.AppUser", "BoxOwner")
-                        .WithMany("OwnerChatBoxes")
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BoxOwner");
-
-                    b.Navigation("ChatWithUser");
+                    b.Navigation("FriendIdInChatBox");
                 });
 
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Comment", b =>
@@ -651,15 +643,11 @@ namespace MoBaEsport.Data.Migrations
                 {
                     b.Navigation("AcceptFriends");
 
-                    b.Navigation("ChatBoxes");
-
                     b.Navigation("Comments");
 
                     b.Navigation("Followers");
 
                     b.Navigation("Following");
-
-                    b.Navigation("OwnerChatBoxes");
 
                     b.Navigation("Posts");
 
@@ -682,6 +670,12 @@ namespace MoBaEsport.Data.Migrations
                     b.Navigation("Reactions");
 
                     b.Navigation("Replys");
+                });
+
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.Friend", b =>
+                {
+                    b.Navigation("ChatBox")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Post", b =>

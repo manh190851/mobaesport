@@ -11,5 +11,6 @@ namespace MoBaEsport.Data.EntityModel
         public AppUser AcceptUser { get; set; }
         public FriendStatus Status { get; set; }
         public DateTime Created { get; set; }
+        public ChatBox ChatBox { get; set; }
     }
 }

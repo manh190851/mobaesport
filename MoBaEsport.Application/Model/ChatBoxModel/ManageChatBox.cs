@@ -1,4 +1,5 @@
-﻿using MoBaEsport.Data.DBContextModel;
+﻿using MoBaEsport.Application.Model.MessageModel;
+using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
 
         public ManageChatBox(ESportDbContext context)
         {
-            this.db = context;
+            db = context;
         }
 
         public async Task<int> Create(ChatBoxCreateModel model)
         {
-            var chatbox = new ChatBox()
+            /*var chatbox = new ChatBox()
             {
                 ChatBoxId = model.ChatBoxId,
                 OwnerId = model.OwnerId,
@@ -28,20 +29,62 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
 
             db.ChatBox.Add(chatbox);
 
+            return await db.SaveChangesAsync();*/
+            throw new NotImplementedException();
+        }
+
+        public async Task<int> Delete(long chatboxId)
+        {
+            var chatbox = db.ChatBox.Find(chatboxId);
+
+            if (chatbox == null) throw new Exception("Not Found!");
+
+            db.ChatBox.Remove(chatbox);
+
             return await db.SaveChangesAsync();
         }
 
-        public Task<int> Delete(long chatboxId)
+        public async Task<MessageViewModel> GetMessage(Message messtoget)
+        {
+            if (messtoget == null) throw new Exception("Not Found");
+
+            MessageViewModel messageViewModel = new MessageViewModel()
+            {
+                Content = messtoget.Content,
+                Created = messtoget.Created,
+                ChatBoxId = messtoget.ChatBoxId,
+                SenderId = messtoget.SenderId,
+                Sender = messtoget.Sender,
+                chatBox = messtoget.ChatBox
+            };
+
+            return messageViewModel;
+        }
+
+        public async Task<int> SendMessage(Guid userid, MessageCreateModel model)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Message>> GetMessages(long chatboxId)
+        public Task<ChatBoxViewModel> ViewChatBox(long chatboxid)
         {
-            var messageList = from message in db.Messages
-                              where message.ChatBoxId == chatboxId
-                              select message;
-            return (Task<List<Message>>)messageList;
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<MessageViewModel>> ViewListMessage(long chatboxid)
+        {
+            var listmessage = db.Messages.ToList().Where(m => m.ChatBoxId == chatboxid);
+
+            if (listmessage == null) throw new Exception("Not Found");
+
+            List<MessageViewModel> listViewMessage = new List<MessageViewModel>();
+
+            foreach(var message in listmessage)
+            {
+                var messagetoget = await GetMessage(message);
+                listViewMessage.Add(messagetoget);
+            }
+            return listViewMessage;
         }
     }
 }

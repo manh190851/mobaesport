@@ -16,27 +16,37 @@ namespace MoBaEsport.Application.Model.FriendModel
             this.db = db;
         }
 
-        public Task<int> Create(Guid userId, FriendCreateModel model, Guid TargetId)
+        public async Task<int> Create(Guid userId, FriendCreateModel model, Guid TargetId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> Delete(Guid userId, long friendId)
+        public async Task<int> Delete(Guid userId, long friendId)
         {
             throw new NotImplementedException();
         }
 
-        public Task SendFriendRequest (Guid userId, Guid TargetId) 
-        { 
-            throw new NotImplementedException(); 
-        }
-
-        public Task<List<FriendRequestModel>> ViewFriendRequest()
+        public async Task<List<FriendRequestModel>> ViewFriendRequest()
         {
             throw new NotImplementedException();
         }
 
-        public Task AcceptFriendRequest()
+        public async Task AcceptFriendRequest()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<FriendRequestModel> CreateRequest(Guid TargetId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<FriendRequestModel>> ViewListRequest(Guid TargetId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<bool> AccepRequest(FriendRequestModel model)
         {
             throw new NotImplementedException();
         }

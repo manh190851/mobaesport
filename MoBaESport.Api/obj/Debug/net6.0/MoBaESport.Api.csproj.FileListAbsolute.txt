@@ -67,4 +67,3 @@ C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\obj\Debug\net6.0\MoBaESport.Api.MvcApplicationPartsAssemblyInfo.cs

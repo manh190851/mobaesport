@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MoBaEsport.Application.Model.ReactionModel;
+using MoBaEsport.Data.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,9 @@ namespace MoBaEsport.Application.Model.ReplyModel
         Task<int> Update(ReplyUpdateModel model, long replyId);
 
         Task<int> Delete(Guid userId, long replyId);
+
+        Task<List<ReactionViewModel>> ViewListReaction(long replyId);
+
+        Task<ReactionViewModel> GetReaction(Reaction reactoget);
     }
 }

@@ -22,7 +22,8 @@ namespace MoBaEsport.Data.Enum
     {
         Friend,
         Unfriend,
-        Block
+        Block,
+        Requesting,
     }
 
     public enum FollowStatus

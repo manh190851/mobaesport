@@ -1,4 +1,6 @@
-﻿using MoBaEsport.Data.DBContextModel;
+﻿using MoBaEsport.Application.Model.ReactionModel;
+using MoBaEsport.Application.Model.ReplyModel;
+using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
 using System;
 using System.Collections.Generic;
@@ -46,6 +48,25 @@ namespace MoBaEsport.Application.Model.CommentModel
             return await db.SaveChangesAsync();
         }
 
+        public Task<ReactionViewModel> GetReaction(Reaction reactoget)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<ReplyViewModel> GetReply(Reply replytoget)
+        {
+            if (replytoget == null) throw new Exception("Not Found!!");
+
+            ReplyViewModel replyViewModel = new ReplyViewModel()
+            {
+                ReplyContent = replytoget.ReplyContent,
+                Created = replytoget.Created,
+                UserId = replytoget.UserId,
+                CommentId = replytoget.ComId,
+            };
+            return replyViewModel;
+        }
+
         public async Task<int> Update(CommentUpdateModel model, long commentId)
         {
             var comment = db.Comments.Find(commentId);
@@ -56,6 +77,25 @@ namespace MoBaEsport.Application.Model.CommentModel
             comment.Created = model.Created;
 
             return await db.SaveChangesAsync();
+        }
+
+        public Task<List<ReactionViewModel>> ViewListReaction(long commentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<ReplyViewModel>> ViewListReply(long commentId)
+        {
+            var replies = db.Replies.ToList().Where(m => m.ComId == commentId);
+
+            var listviewreply = new List<ReplyViewModel>();
+
+            foreach(var reply in replies)
+            {
+                var replyViewModel = await GetReply(reply);
+                listviewreply.Add(replyViewModel);
+            };
+            return listviewreply;
         }
     }
 }
