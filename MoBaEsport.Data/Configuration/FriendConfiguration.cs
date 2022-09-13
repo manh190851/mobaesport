@@ -4,7 +4,7 @@ using MoBaEsport.Data.EntityModel;
 
 namespace MoBaEsport.Data.Configuration
 {
-    internal class FriendConfiguration : IEntityTypeConfiguration<Friend>
+    public class FriendConfiguration : IEntityTypeConfiguration<Friend>
     {
         public void Configure(EntityTypeBuilder<Friend> builder)
         {

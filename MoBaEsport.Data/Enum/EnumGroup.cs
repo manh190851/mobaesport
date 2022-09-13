@@ -34,12 +34,11 @@ namespace MoBaEsport.Data.Enum
 
     public enum PostStatus
     {
-        Public,
-        Friend,
-        Private,
-        Locked,
-        Hidden,
-        Reporting
+        Public = 0,
+        Private = 1,
+        Locked = 2,
+        Hidden = 3,
+        Reporting = 4
     }
 
     public enum Reactions

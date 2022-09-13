@@ -17,7 +17,7 @@ namespace MoBaEsport.Application.Model.FollowModel
             this.db = db;
         }
 
-        public async Task<int> Create(FollowCreateModel model)
+        public async Task<long> Create(FollowCreateModel model)
         {
             var follow = new Follow()
             {
@@ -32,7 +32,7 @@ namespace MoBaEsport.Application.Model.FollowModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(Guid userId, long followId) //Un follow
+        public async Task<long> Delete(Guid userId, long followId) //Un follow
         {
             var follow = db.Follows.Find(followId);
 

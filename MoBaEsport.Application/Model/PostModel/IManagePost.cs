@@ -9,7 +9,7 @@ namespace MoBaEsport.Application.Model.PostModel
     public interface IManagePost
     {
         Task<List<PostViewModel>> ViewReportPost();
-        Task Lock(long PostId);
-        Task UnLock(long PostId);
+        Task<long> Lock(long PostId);
+        Task<long> UnLock(long PostId);
     }
 }

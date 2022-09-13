@@ -11,11 +11,11 @@ namespace MoBaEsport.Application.Model.CommentModel
 {
     public interface IManageComment
     {
-        Task<int> Create(CommentCreateModel model);
+        Task<long> Create(CommentCreateModel model);
 
-        Task<int> Update(CommentUpdateModel model, long commentId);
+        Task<long> Update(CommentUpdateModel model, long commentId);
 
-        Task<int> Delete(Guid userId, long commentId);
+        Task<long> Delete(Guid userId, long commentId);
 
         Task<List<ReplyViewModel>> ViewListReply(long commentId);
 

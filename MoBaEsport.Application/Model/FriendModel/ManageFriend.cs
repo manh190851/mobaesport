@@ -1,4 +1,5 @@
 ﻿using MoBaEsport.Data.DBContextModel;
+using MoBaEsport.Data.EntityModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,39 +17,43 @@ namespace MoBaEsport.Application.Model.FriendModel
             this.db = db;
         }
 
-        public async Task<int> Create(Guid userId, FriendCreateModel model, Guid TargetId)
+        public async Task<long> Delete(Guid userId, long friendId)
         {
-            throw new NotImplementedException();
+            var friend = db.Friends.Find(friendId);
+
+            if (friend == null) throw new Exception();
+            if(friend.RequestId != userId && friend.AcceptId != userId) throw new Exception();
+
+            db.Friends.Remove(friend);
+
+            return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(Guid userId, long friendId)
+        public async Task<long> CreateRequest(FriendCreateModel model)
         {
-            throw new NotImplementedException();
+            var friendRequest = new Friend()
+            {
+                FriendId = model.FriendId,
+                AcceptId = model.AcceptId,
+                Created = model.Created,
+                RequestId = model.RequestId,
+                Status = Data.Enum.FriendStatus.Requesting
+            };
+            db.Friends.Add(friendRequest);
+
+            return await db.SaveChangesAsync();
         }
 
-        public async Task<List<FriendRequestModel>> ViewFriendRequest()
+        public async Task<long> AccepRequest(long friendId)
         {
-            throw new NotImplementedException();
-        }
+            var friend = db.Friends.Find(friendId);
 
-        public async Task AcceptFriendRequest()
-        {
-            throw new NotImplementedException();
-        }
+            if (friend == null) throw new Exception();
+            if (friend.Status != Data.Enum.FriendStatus.Requesting) throw new Exception();
 
-        public async Task<FriendRequestModel> CreateRequest(Guid TargetId)
-        {
-            throw new NotImplementedException();
-        }
+            friend.Status = Data.Enum.FriendStatus.Friend;
 
-        public async Task<List<FriendRequestModel>> ViewListRequest(Guid TargetId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<bool> AccepRequest(FriendRequestModel model)
-        {
-            throw new NotImplementedException();
+            return await db.SaveChangesAsync();
         }
     }
 }

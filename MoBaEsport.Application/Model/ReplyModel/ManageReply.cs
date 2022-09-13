@@ -18,7 +18,7 @@ namespace MoBaEsport.Application.Model.ReplyModel
             this.db = db;
         }
 
-        public async Task<int> Create(ReplyCreateModel model)
+        public async Task<long> Create(ReplyCreateModel model)
         {
             var reply = new Reply()
             {
@@ -34,7 +34,7 @@ namespace MoBaEsport.Application.Model.ReplyModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(Guid userId, long replyId)
+        public async Task<long> Delete(Guid userId, long replyId)
         {
             var reply = db.Replies.Find(replyId);
 
@@ -52,7 +52,7 @@ namespace MoBaEsport.Application.Model.ReplyModel
             throw new NotImplementedException();
         }
 
-        public async Task<int> Update(ReplyUpdateModel model, long replyId)
+        public async Task<long> Update(ReplyUpdateModel model, long replyId)
         {
             var reply = db.Replies.Find(replyId);
 

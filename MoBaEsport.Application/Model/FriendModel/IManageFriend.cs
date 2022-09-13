@@ -8,14 +8,10 @@ namespace MoBaEsport.Application.Model.FriendModel
 {
     public interface IManageFriend
     {
-        Task<int> Create(Guid userId, FriendCreateModel model, Guid TargetId);
+        Task<long> CreateRequest(FriendCreateModel model);
 
-        Task<FriendRequestModel> CreateRequest(Guid TargetId);
+        Task<long> Delete(Guid userId, long friendId);
 
-        Task<int> Delete(Guid userId, long friendId);
-
-        Task<List<FriendRequestModel>> ViewListRequest(Guid TargetId);
-
-        Task<bool> AccepRequest(FriendRequestModel model);
+        Task<long> AccepRequest(long friendId);
     }
 }

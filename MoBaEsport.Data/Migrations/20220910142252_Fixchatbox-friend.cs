@@ -43,7 +43,7 @@ namespace MoBaEsport.Data.Migrations
             migrationBuilder.AddColumn<long>(
                 name: "FriendId",
                 table: "ChatBoxs",
-                type: "bigint",
+                type: "biglong",
                 nullable: false,
                 defaultValue: 0L);
 

@@ -10,16 +10,16 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
 {
     public interface IManageChatBox
     {
-        Task<int> Create(ChatBoxCreateModel model);
+        Task<long> Create(ChatBoxCreateModel model);
 
-        Task<int> Delete(long chatboxId);
+        Task<long> Delete(long chatboxId);
 
-        Task<MessageViewModel> GetMessage(Message messtoget);
+        Task<MessageViewModel> GetMessage(long messageId);
 
-        Task<List<MessageViewModel>> ViewListMessage(long chatboxid);
+        Task<List<MessageViewModel>> GetListMessage(long chatboxid);
 
         Task<ChatBoxViewModel> ViewChatBox(long chatboxid);
 
-        Task<int> SendMessage(Guid userid, MessageCreateModel model);
+        Task<long> ChangeColor(long chatboxId);
     }
 }

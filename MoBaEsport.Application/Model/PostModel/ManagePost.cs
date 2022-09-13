@@ -17,24 +17,24 @@ namespace MoBaEsport.Application.Model.PostModel
            this._db = db;
         }
 
-        public async Task Lock(long postId)
+        public async Task<long> Lock(long postId)
         {
             var post = _db.Posts.Find(postId);
 
             post.Status = Data.Enum.PostStatus.Locked;
 
-            await _db.SaveChangesAsync();
+            return await _db.SaveChangesAsync();
         }
 
-        public async Task UnLock(long PostId)
+        public async Task<long> UnLock(long PostId)
         {
             var posts = _db.Posts.Find(PostId);
 
             if (posts.Status != Data.Enum.PostStatus.Locked) throw new Exception("Wrong access!!");
 
-            posts.Status = Data.Enum.PostStatus.Public;
+            posts.Status = Data.Enum.PostStatus.Private;
 
-            await _db.SaveChangesAsync();
+            return await _db.SaveChangesAsync();
         }
 
         public async Task<List<PostViewModel>> ViewReportPost()

@@ -3,7 +3,9 @@
     public class ChatBoxCreateModel
     {
         public long ChatBoxId { get; set; }
-        public Guid OwnerId { get; set; }
-        public Guid ChatWithId { get; set; }
+
+        public string Color { get; set; }   
+
+        public long friendId { get; set; }
     }
 }

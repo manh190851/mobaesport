@@ -17,7 +17,7 @@ namespace MoBaEsport.Application.Model.MessageModel
             this.db = db;
         }
 
-        public async Task<int> Create(MessageCreateModel model, long chatboxId)
+        public async Task<long> Create(MessageCreateModel model)
         {
             var message = new Message()
             {
@@ -33,7 +33,7 @@ namespace MoBaEsport.Application.Model.MessageModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(Guid userId, long messageId)
+        public async Task<long> Delete(Guid userId, long messageId)
         {
             var message = db.Messages.Find(messageId);
 

@@ -18,22 +18,26 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
             db = context;
         }
 
-        public async Task<int> Create(ChatBoxCreateModel model)
+        public Task<long> ChangeColor(long chatboxId)
         {
-            /*var chatbox = new ChatBox()
+            throw new NotImplementedException();
+        }
+
+        public async Task<long> Create(ChatBoxCreateModel model)
+        {
+            var chatbox = new ChatBox()
             {
                 ChatBoxId = model.ChatBoxId,
-                OwnerId = model.OwnerId,
-                ChatWithId = model.ChatWithId
+                FriendId = model.friendId,
+                ChatBoxColor = model.Color
             };
 
             db.ChatBox.Add(chatbox);
 
-            return await db.SaveChangesAsync();*/
-            throw new NotImplementedException();
+            return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(long chatboxId)
+        public async Task<long> Delete(long chatboxId)
         {
             var chatbox = db.ChatBox.Find(chatboxId);
 
@@ -44,8 +48,9 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<MessageViewModel> GetMessage(Message messtoget)
+        public async Task<MessageViewModel> GetMessage(long messageId)
         {
+            var messtoget = db.Messages.Find(messageId);
             if (messtoget == null) throw new Exception("Not Found");
 
             MessageViewModel messageViewModel = new MessageViewModel()
@@ -61,17 +66,23 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
             return messageViewModel;
         }
 
-        public async Task<int> SendMessage(Guid userid, MessageCreateModel model)
+        public async Task<ChatBoxViewModel> ViewChatBox(long chatboxid)
         {
-            throw new NotImplementedException();
+            var chatbox = db.ChatBox.Find(chatboxid);
+
+            if (chatbox == null) throw new Exception();
+
+            var chatboxViewModel = new ChatBoxViewModel()
+            {
+                FriendId = chatbox.FriendId,
+                FriendIdInChatBox = chatbox.FriendIdInChatBox,
+                Messages = await GetListMessage(chatboxid),
+                color = chatbox.ChatBoxColor
+            };
+            return chatboxViewModel;
         }
 
-        public Task<ChatBoxViewModel> ViewChatBox(long chatboxid)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<MessageViewModel>> ViewListMessage(long chatboxid)
+        public async Task<List<MessageViewModel>> GetListMessage(long chatboxid)
         {
             var listmessage = db.Messages.ToList().Where(m => m.ChatBoxId == chatboxid);
 
@@ -81,7 +92,7 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
 
             foreach(var message in listmessage)
             {
-                var messagetoget = await GetMessage(message);
+                var messagetoget = await GetMessage(message.MessageId);
                 listViewMessage.Add(messagetoget);
             }
             return listViewMessage;

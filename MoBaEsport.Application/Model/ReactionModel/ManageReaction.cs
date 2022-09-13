@@ -11,7 +11,7 @@ namespace MoBaEsport.Application.Model.ReactionModel
     public class ManageReaction : IManageReaction
     {
         private ESportDbContext db;
-        public async Task<int> Create(ReactionCreateModel model)
+        public async Task<long> Create(ReactionCreateModel model)
         {
             var reaction = new Reaction()
             {
@@ -29,14 +29,14 @@ namespace MoBaEsport.Application.Model.ReactionModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(long reactionId)
+        public async Task<long> Delete(long reactionId)
         {
             var reaction = db.Reactions.Find(reactionId);
             db.Reactions.Remove(reaction);
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Update(ReactionUpdateModel model, long reactionId)
+        public async Task<long> Update(ReactionUpdateModel model, long reactionId)
         {
             var reaction = db.Reactions.Find(reactionId);
 

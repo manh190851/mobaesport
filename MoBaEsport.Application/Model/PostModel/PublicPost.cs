@@ -19,7 +19,7 @@ namespace MoBaEsport.Application.Model.PostModel
             this.db = context;
         }
 
-        public async Task<int> Create(PostCreateModel model)
+        public async Task<long> Create(PostCreateModel model)
         {
             var post = new Post()
             {
@@ -34,10 +34,12 @@ namespace MoBaEsport.Application.Model.PostModel
 
             db.Posts.Add(post);
             
-            return await db.SaveChangesAsync();
+            await db.SaveChangesAsync();
+
+            return post.PostId;
         }
 
-        public async Task<int> Delete(Guid userId, long PostId)
+        public async Task<long> Delete(Guid userId, long PostId)
         {
             var post = db.Posts.Find(PostId);
 
@@ -49,7 +51,7 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Update(PostUpdateModel model, long PostId)
+        public async Task<long> Update(long PostId, PostUpdateModel model)
         {
             var post = db.Posts.Find(PostId);
 
@@ -72,14 +74,14 @@ namespace MoBaEsport.Application.Model.PostModel
 
             foreach(var post in posts)
             {
-                var postModel = await GetPost(post);
+                var postModel = await GetPost(post.PostId);
                 postViewModels.Add(postModel);
             }
 
             return postViewModels;
         }
 
-        public async Task<int> HiddenPost(long PostId)
+        public async Task<long> HiddenPost(long PostId)
         {
             var post = db.Posts.Find(PostId);
 
@@ -88,7 +90,7 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task GetReportPost(long postId)
+        public async Task<long> ReportPost(long postId)
         {
             var post = db.Posts.Find(postId);
 
@@ -96,10 +98,10 @@ namespace MoBaEsport.Application.Model.PostModel
 
             post.Status = Data.Enum.PostStatus.Reporting;
 
-            await db.SaveChangesAsync();
+            return await db.SaveChangesAsync();
         }
 
-        public async Task<int> ShareCount(long postId)
+        public async Task<long> ShareCount(long postId)
         {
             var post = await db.Posts.FindAsync(postId);
 
@@ -109,7 +111,9 @@ namespace MoBaEsport.Application.Model.PostModel
 
             post.ShareCount = shareposts.Count();
 
-            return await db.SaveChangesAsync();
+            await db.SaveChangesAsync();
+
+            return post.ShareCount;
         }
 
         public async Task<List<CommentViewModel>> ViewComment(long postId)
@@ -122,7 +126,7 @@ namespace MoBaEsport.Application.Model.PostModel
 
             foreach(var comment in comments)
             {
-                var commentModel = await GetComment(comment);
+                var commentModel = await GetComment(comment.ComId);
                 listComment.Add(commentModel);
             }
             return listComment;
@@ -138,7 +142,7 @@ namespace MoBaEsport.Application.Model.PostModel
 
             foreach(var reaction in reactions)
             {
-                var reactionModel = await GetReaction(reaction);
+                var reactionModel = await GetReaction(reaction.ReacId);
                 listReaction.Add(reactionModel);
             }
             return listReaction;
@@ -154,19 +158,20 @@ namespace MoBaEsport.Application.Model.PostModel
 
             foreach(var post in posts)
             {
-                var postmodel = await GetPost(post);
+                var postmodel = await GetPost(post.PostId);
                 list.Add(postmodel);
             }
             return list;
         }
 
-        public async Task<int> OpenPost(long postId)
+        public async Task<long> OpenPost(long postId)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<PostViewModel> GetPost(Post post)
+        public async Task<PostViewModel> GetPost(long postId)
         {
+            var post = db.Posts.Find(postId);
             if (post == null) throw new ArgumentNullException(nameof(post));
 
             PostViewModel postViewModel = new PostViewModel()
@@ -174,7 +179,7 @@ namespace MoBaEsport.Application.Model.PostModel
                 PostContent = post.PostContent,
                 Status = post.Status,
                 Created = post.Created,
-                ShareCount = post.ShareCount,
+                ShareCount = await ShareCount(post.PostId),
                 SharePostId = post.SharePostId,
                 UserId = post.UserId,
             };
@@ -182,8 +187,9 @@ namespace MoBaEsport.Application.Model.PostModel
             return postViewModel;
         }
 
-        public async Task<CommentViewModel> GetComment(Comment comment)
+        public async Task<CommentViewModel> GetComment(long commentId)
         {
+            var comment = db.Comments.Find(commentId);
             if (comment == null) throw new ArgumentNullException(nameof(comment));
 
             CommentViewModel commentViewModel = new CommentViewModel()
@@ -193,12 +199,13 @@ namespace MoBaEsport.Application.Model.PostModel
                 PostId = comment.PostId,
                 UserId = comment.UserId
             };
-
             return commentViewModel;
         }
 
-        public async Task<ReactionViewModel> GetReaction(Reaction reaction)
+        public async Task<ReactionViewModel> GetReaction(long reactionId)
         {
+            var reaction = db.Reactions.Find(reactionId);
+
             if (reaction == null) throw new ArgumentNullException(nameof(reaction));
 
             ReactionViewModel reactionViewModel = new ReactionViewModel()
@@ -209,6 +216,24 @@ namespace MoBaEsport.Application.Model.PostModel
             };
 
             return reactionViewModel;
+        }
+
+        public async Task<long> UpdateStatus(long postId, Data.Enum.PostStatus newStatus)
+        {
+            var post = db.Posts.Find(postId);
+            Data.Enum.PostStatus k = newStatus;
+
+            switch (k)
+            {
+                case (Data.Enum.PostStatus)0:
+                    post.Status = Data.Enum.PostStatus.Public;
+                    break;
+                case (Data.Enum.PostStatus)1:
+                    post.Status = Data.Enum.PostStatus.Private;
+                    break;
+            }
+
+            return await db.SaveChangesAsync();
         }
     }
 }

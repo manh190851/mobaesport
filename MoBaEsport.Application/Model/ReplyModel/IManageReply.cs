@@ -10,11 +10,11 @@ namespace MoBaEsport.Application.Model.ReplyModel
 {
     public interface IManageReply
     {
-        Task<int> Create(ReplyCreateModel model);
+        Task<long> Create(ReplyCreateModel model);
 
-        Task<int> Update(ReplyUpdateModel model, long replyId);
+        Task<long> Update(ReplyUpdateModel model, long replyId);
 
-        Task<int> Delete(Guid userId, long replyId);
+        Task<long> Delete(Guid userId, long replyId);
 
         Task<List<ReactionViewModel>> ViewListReaction(long replyId);
 

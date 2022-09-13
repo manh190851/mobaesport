@@ -8,8 +8,8 @@ namespace MoBaEsport.Application.Model.FollowModel
 {
     public interface IManageFollow
     {
-        Task<int> Create(FollowCreateModel model);
+        Task<long> Create(FollowCreateModel model);
 
-        Task<int> Delete(Guid userId, long followId);
+        Task<long> Delete(Guid userId, long followId);
     }
 }

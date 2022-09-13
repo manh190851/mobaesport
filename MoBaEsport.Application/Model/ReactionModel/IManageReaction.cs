@@ -8,10 +8,10 @@ namespace MoBaEsport.Application.Model.ReactionModel
 {
     public interface IManageReaction
     {
-        Task<int> Create(ReactionCreateModel model);
+        Task<long> Create(ReactionCreateModel model);
 
-        Task<int> Update(ReactionUpdateModel model, long reactionId);
+        Task<long> Update(ReactionUpdateModel model, long reactionId);
 
-        Task<int> Delete(long reactionId);
+        Task<long> Delete(long reactionId);
     }
 }

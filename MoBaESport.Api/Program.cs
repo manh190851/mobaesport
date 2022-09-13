@@ -1,6 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using MoBaEsport.Application.Model.ChatBoxModel;
+using MoBaEsport.Application.Model.CommentModel;
+using MoBaEsport.Application.Model.FollowModel;
+using MoBaEsport.Application.Model.FriendModel;
+using MoBaEsport.Application.Model.MessageModel;
 using MoBaEsport.Application.Model.PostModel;
+using MoBaEsport.Application.Model.ReactionModel;
+using MoBaEsport.Application.Model.ReplyModel;
 using MoBaEsport.Data.DBContextModel;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +20,17 @@ builder.Services.AddDbContext<ESportDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 
+// Trasient services
 builder.Services.AddTransient<IManagePost, ManagePost>();
 builder.Services.AddTransient<IPublicPost, PublicPost>();
-builder.Services.AddTransient<PublicPost, PublicPost>();
+builder.Services.AddTransient<IManageComment, ManageComment>();
+builder.Services.AddTransient<IManageReply, ManageReply>();
+builder.Services.AddTransient<IManageReaction, ManageReaction>();
+builder.Services.AddTransient<IManageChatBox, ManageChatBox>();
+builder.Services.AddTransient<IManageMessage, ManageMessage>();
+builder.Services.AddTransient<IManageFollow, ManageFollow>();
+builder.Services.AddTransient<IManageFriend, ManageFriend>();
+
 
 
 //Add Swagger

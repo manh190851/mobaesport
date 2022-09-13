@@ -11,30 +11,32 @@ namespace MoBaEsport.Application.Model.PostModel
 {
     public interface IPublicPost
     {
-        Task<int> Create(PostCreateModel model);
+        Task<long> Create(PostCreateModel model);
 
-        Task<int> Update(PostUpdateModel model, long PostId);
+        Task<long> Update(long PostId, PostUpdateModel model);
 
-        Task<int> Delete(Guid userId, long PostId);
+        Task<long> Delete(Guid userId, long PostId);
 
         Task<List<PostViewModel>> ViewPostsByUserId(Guid userId);
 
         Task<List<PostViewModel>> ViewPublicPost();
 
-        Task<int> HiddenPost(long postId);
+        Task<long> HiddenPost(long postId);
 
-        Task<int> OpenPost(long postId);
+        Task<long> OpenPost(long postId);
 
-        Task GetReportPost(long postId);
+        Task<long> ReportPost(long postId);
+
+        Task<long> UpdateStatus(long postId, Data.Enum.PostStatus newStatus);
 
         Task<List<CommentViewModel>> ViewComment(long postId);
 
         Task<List<ReactionViewModel>> ViewReaction(long postId);
 
-        Task<PostViewModel> GetPost(Post post);
+        Task<PostViewModel> GetPost(long postId);
 
-        Task<CommentViewModel> GetComment(Comment comment);
+        Task<CommentViewModel> GetComment(long commentId);
 
-        Task<ReactionViewModel> GetReaction(Reaction reaction);
+        Task<ReactionViewModel> GetReaction(long reactionId);
     }
 }

@@ -19,7 +19,7 @@ namespace MoBaEsport.Application.Model.CommentModel
             this.db = db;
         }
 
-        public async Task<int> Create(CommentCreateModel model)
+        public async Task<long> Create(CommentCreateModel model)
         {
             var comment = new Comment()
             {
@@ -34,7 +34,7 @@ namespace MoBaEsport.Application.Model.CommentModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<int> Delete(Guid userId, long commentId)
+        public async Task<long> Delete(Guid userId, long commentId)
         {
             var comment = db.Comments.Find(commentId);
 
@@ -67,7 +67,7 @@ namespace MoBaEsport.Application.Model.CommentModel
             return replyViewModel;
         }
 
-        public async Task<int> Update(CommentUpdateModel model, long commentId)
+        public async Task<long> Update(CommentUpdateModel model, long commentId)
         {
             var comment = db.Comments.Find(commentId);
 
