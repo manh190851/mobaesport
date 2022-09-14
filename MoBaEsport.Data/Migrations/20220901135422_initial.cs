@@ -13,7 +13,7 @@ namespace MoBaEsport.Data.Migrations
                 name: "AppRoleClaims",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "long", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -43,7 +43,7 @@ namespace MoBaEsport.Data.Migrations
                 name: "AppUserClaims",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "long", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -86,15 +86,15 @@ namespace MoBaEsport.Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Fullname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Gender = table.Column<long>(type: "long", nullable: false),
+                    Gender = table.Column<int>(type: "int", nullable: false),
                     DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nation = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     City = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true, defaultValue: "https://icon-library.com/images/icon-user/icon-user-15.jpg"),
                     LastLogin = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LoginStatus = table.Column<long>(type: "long", maxLength: 50, nullable: false),
-                    UserStatus = table.Column<long>(type: "long", maxLength: 50, nullable: false),
+                    LoginStatus = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    UserStatus = table.Column<int>(type: "int", maxLength: 50, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -108,7 +108,7 @@ namespace MoBaEsport.Data.Migrations
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<long>(type: "long", nullable: false)
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -133,7 +133,7 @@ namespace MoBaEsport.Data.Migrations
                 name: "ChatBoxs",
                 columns: table => new
                 {
-                    ChatBoxId = table.Column<long>(type: "biglong", nullable: false)
+                    ChatBoxId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ChatWithId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -159,7 +159,7 @@ namespace MoBaEsport.Data.Migrations
                 name: "Follows",
                 columns: table => new
                 {
-                    FollowId = table.Column<long>(type: "biglong", nullable: false)
+                    FollowId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FollowerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FollowingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -186,11 +186,11 @@ namespace MoBaEsport.Data.Migrations
                 name: "Friends",
                 columns: table => new
                 {
-                    FriendId = table.Column<long>(type: "biglong", nullable: false)
+                    FriendId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RequestId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AcceptId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Status = table.Column<long>(type: "long", maxLength: 20, nullable: false),
+                    Status = table.Column<int>(type: "int", maxLength: 20, nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -214,14 +214,14 @@ namespace MoBaEsport.Data.Migrations
                 name: "Posts",
                 columns: table => new
                 {
-                    PostId = table.Column<long>(type: "biglong", nullable: false)
+                    PostId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PostContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<long>(type: "long", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
                     IsHidden = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    ShareCount = table.Column<long>(type: "biglong", nullable: false),
-                    SharePostId = table.Column<long>(type: "biglong", nullable: true),
+                    ShareCount = table.Column<long>(type: "bigint", nullable: false),
+                    SharePostId = table.Column<long>(type: "bigint", nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -244,12 +244,12 @@ namespace MoBaEsport.Data.Migrations
                 name: "Messages",
                 columns: table => new
                 {
-                    MessageId = table.Column<long>(type: "biglong", nullable: false)
+                    MessageId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SenderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ChatBoxId = table.Column<long>(type: "biglong", nullable: false)
+                    ChatBoxId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -272,11 +272,11 @@ namespace MoBaEsport.Data.Migrations
                 name: "Comments",
                 columns: table => new
                 {
-                    ComId = table.Column<long>(type: "biglong", nullable: false)
+                    ComId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PostId = table.Column<long>(type: "biglong", nullable: false),
+                    PostId = table.Column<long>(type: "bigint", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -300,11 +300,11 @@ namespace MoBaEsport.Data.Migrations
                 name: "Replys",
                 columns: table => new
                 {
-                    ReplyId = table.Column<long>(type: "biglong", nullable: false)
+                    ReplyId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ReplyContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ComId = table.Column<long>(type: "biglong", nullable: false),
+                    ComId = table.Column<long>(type: "bigint", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -328,14 +328,14 @@ namespace MoBaEsport.Data.Migrations
                 name: "Reactions",
                 columns: table => new
                 {
-                    ReacId = table.Column<long>(type: "biglong", nullable: false)
+                    ReacId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReacName = table.Column<long>(type: "long", maxLength: 20, nullable: false),
+                    ReacName = table.Column<int>(type: "int", maxLength: 20, nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PostId = table.Column<long>(type: "biglong", nullable: true),
-                    ComId = table.Column<long>(type: "biglong", nullable: true),
+                    PostId = table.Column<long>(type: "bigint", nullable: true),
+                    ComId = table.Column<long>(type: "bigint", nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ReplyId = table.Column<long>(type: "biglong", nullable: true)
+                    ReplyId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {

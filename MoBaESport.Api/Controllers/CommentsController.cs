@@ -6,11 +6,11 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CommentController : ControllerBase
+    public class CommentsController : ControllerBase
     {
         private readonly IManageComment _managecomment;
 
-        public CommentController(IManageComment managecomment)
+        public CommentsController(IManageComment managecomment)
         {
             _managecomment = managecomment;
         }

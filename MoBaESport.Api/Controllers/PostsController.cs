@@ -6,12 +6,12 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostController : ControllerBase
+    public class PostsController : ControllerBase
     {
         private readonly IPublicPost _publicPost;
         private readonly IManagePost _managePost;
 
-        public PostController(IPublicPost publicPost, IManagePost managePost)
+        public PostsController(IPublicPost publicPost, IManagePost managePost)
         {
             _publicPost = publicPost;
             _managePost = managePost;
@@ -20,11 +20,11 @@ namespace MoBaESport.Api.Controllers
         [HttpGet("view-post-byuserId/{userId}")]
         public async Task<IActionResult> ViewPostByUserId(Guid userId)
         {
-            var posts = await _publicPost.ViewPostsByUserId(userId);
+            var actionResult = await _publicPost.ViewPostsByUserId(userId);
 
-            if (posts == null) return NotFound("Can not find!!");
+            if (actionResult == null) return NotFound("Can not find!!");
 
-            return Ok(posts); //check after
+            return Ok(actionResult); //check after
         }
 
         [HttpGet("view-public-post")]
@@ -89,7 +89,7 @@ namespace MoBaESport.Api.Controllers
             return Ok("Delete sucessfully");
         }
 
-        [HttpPut("hidden-post/{postId}")]
+        [HttpPatch("hidden-post/{postId}")]
         public async Task<IActionResult> HiddenPost(long postId)
         {
             var post = await _publicPost.HiddenPost(postId);
@@ -99,7 +99,7 @@ namespace MoBaESport.Api.Controllers
             return Ok("Sucessfully");
         }
 
-        [HttpPut("open-post/{postId}")]
+        [HttpPatch("open-post/{postId}")]
         public async Task<IActionResult> OpenPost(long postId)
         {
             var post = await _publicPost.OpenPost(postId);
@@ -109,7 +109,7 @@ namespace MoBaESport.Api.Controllers
             return Ok("Sucessfully");
         }
 
-        [HttpPut("report-post/{postId}")]
+        [HttpPatch("report-post/{postId}")]
         public async Task<IActionResult> ReportPost(long postId)
         {
             var post = await _publicPost.ReportPost(postId);
@@ -119,7 +119,7 @@ namespace MoBaESport.Api.Controllers
             return Ok("Sucessfully");
         }
 
-        [HttpPut("lock-post/{postId}")]
+        [HttpPatch("lock-post/{postId}")]
         public async Task<IActionResult> Lock(long postId)
         {
             var post = await _managePost.Lock(postId);
@@ -129,7 +129,7 @@ namespace MoBaESport.Api.Controllers
             return Ok(post);
         }
 
-        [HttpPut("unlock-post/{postId}")]
+        [HttpPatch("unlock-post/{postId}")]
         public async Task<IActionResult> UnLock(long postId)
         {
             var post = await _managePost.UnLock(postId);

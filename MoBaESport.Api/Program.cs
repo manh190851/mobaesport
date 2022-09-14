@@ -1,3 +1,5 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MoBaEsport.Application.Model.ChatBoxModel;
@@ -8,7 +10,9 @@ using MoBaEsport.Application.Model.MessageModel;
 using MoBaEsport.Application.Model.PostModel;
 using MoBaEsport.Application.Model.ReactionModel;
 using MoBaEsport.Application.Model.ReplyModel;
+using MoBaEsport.Application.Systems.UserServiceModel;
 using MoBaEsport.Data.DBContextModel;
+using MoBaEsport.Data.EntityModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,10 @@ var connectionString = builder.Configuration.GetConnectionString("ESportDbContex
 // Add services to the container.
 builder.Services.AddDbContext<ESportDbContext>(options =>
    options.UseSqlServer(connectionString));
+
+builder.Services.AddIdentity<AppUser, AppRole>()
+    .AddEntityFrameworkStores<ESportDbContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddControllersWithViews();
 
@@ -30,7 +38,9 @@ builder.Services.AddTransient<IManageChatBox, ManageChatBox>();
 builder.Services.AddTransient<IManageMessage, ManageMessage>();
 builder.Services.AddTransient<IManageFollow, ManageFollow>();
 builder.Services.AddTransient<IManageFriend, ManageFriend>();
-
+builder.Services.AddTransient<Microsoft.AspNetCore.Identity.UserManager<AppUser>, Microsoft.AspNetCore.Identity.UserManager<AppUser>>();
+builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 
 //Add Swagger

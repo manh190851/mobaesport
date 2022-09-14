@@ -6,11 +6,11 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ReplyController : ControllerBase
+    public class RepliesController : ControllerBase
     {
         private readonly IManageReply _manageReply;
 
-        public ReplyController(IManageReply manageReply)
+        public RepliesController(IManageReply manageReply)
         {
             _manageReply = manageReply;
         }

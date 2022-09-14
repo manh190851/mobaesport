@@ -6,11 +6,11 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ChatBoxController : ControllerBase
+    public class ChatBoxesController : ControllerBase
     {
         private readonly IManageChatBox _manageChatBox;
 
-        public ChatBoxController(IManageChatBox manageChatBox)
+        public ChatBoxesController(IManageChatBox manageChatBox)
         {
             _manageChatBox = manageChatBox;
         }

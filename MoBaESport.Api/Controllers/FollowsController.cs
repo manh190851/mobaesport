@@ -6,11 +6,11 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FollowController : ControllerBase
+    public class FollowsController : ControllerBase
     {
         private readonly IManageFollow _manageFollow;
 
-        public FollowController(IManageFollow managefollow)
+        public FollowsController(IManageFollow managefollow)
         {
             _manageFollow = managefollow;
         }

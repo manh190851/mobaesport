@@ -67,3 +67,12 @@ C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\obj\Debug\net6.0\MoBaESport.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.Owin.Security.Cookies.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.Owin.Security.OAuth.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Owin.dll

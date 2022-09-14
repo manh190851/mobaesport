@@ -6,10 +6,10 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FriendController : ControllerBase
+    public class FriendsController : ControllerBase
     {
         private readonly IManageFriend _manageFriend;
-        public FriendController(IManageFriend manageFriend)
+        public FriendsController(IManageFriend manageFriend)
         {
             _manageFriend = manageFriend;
         }

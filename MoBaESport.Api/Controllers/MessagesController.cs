@@ -6,11 +6,11 @@ namespace MoBaESport.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MessageController : ControllerBase
+    public class MessagesController : ControllerBase
     {
         private readonly IManageMessage _manageMessage;
 
-        public MessageController(IManageMessage manageMessage)
+        public MessagesController(IManageMessage manageMessage)
         {
             _manageMessage = manageMessage;
         }
