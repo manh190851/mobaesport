@@ -174,8 +174,9 @@ namespace MoBaEsport.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Gender")
-                        .HasColumnType("int");
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .ValueGeneratedOnAdd()
@@ -191,9 +192,9 @@ namespace MoBaEsport.Data.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<int>("LoginStatus")
-                        .HasMaxLength(50)
-                        .HasColumnType("int");
+                    b.Property<string>("LoginStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nation")
                         .IsRequired()
@@ -228,9 +229,9 @@ namespace MoBaEsport.Data.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserStatus")
-                        .HasMaxLength(50)
-                        .HasColumnType("int");
+                    b.Property<string>("UserStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -333,9 +334,9 @@ namespace MoBaEsport.Data.Migrations
                     b.Property<Guid>("RequestId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Status")
-                        .HasMaxLength(20)
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FriendId");
 
@@ -402,8 +403,9 @@ namespace MoBaEsport.Data.Migrations
                     b.Property<long?>("SharePostId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -415,6 +417,37 @@ namespace MoBaEsport.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts", (string)null);
+                });
+
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.PostFile", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DateCreate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("PostId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Size")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("PostFile");
                 });
 
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Reaction", b =>
@@ -591,6 +624,17 @@ namespace MoBaEsport.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.PostFile", b =>
+                {
+                    b.HasOne("MoBaEsport.Data.EntityModel.Post", "Post")
+                        .WithMany("PostFiles")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+                });
+
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Reaction", b =>
                 {
                     b.HasOne("MoBaEsport.Data.EntityModel.Comment", "Comment")
@@ -681,6 +725,8 @@ namespace MoBaEsport.Data.Migrations
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Post", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("PostFiles");
 
                     b.Navigation("Reactions");
                 });

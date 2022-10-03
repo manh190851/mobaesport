@@ -1,4 +1,5 @@
-﻿using MoBaEsport.Data.Enum;
+﻿using Microsoft.AspNetCore.Http;
+using MoBaEsport.Data.Enum;
 
 namespace MoBaEsport.Application.Model.PostModel
 {
@@ -7,5 +8,6 @@ namespace MoBaEsport.Application.Model.PostModel
         public string PostContent { get; set; }
         public DateTime Created { get; set; }
         public PostStatus Status { get; set; }
+        public IFormFile postFile { get; set; }
     }
 }

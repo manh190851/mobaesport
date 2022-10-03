@@ -1,4 +1,5 @@
-﻿using MoBaEsport.Data.Enum;
+﻿using Microsoft.AspNetCore.Http;
+using MoBaEsport.Data.Enum;
 
 namespace MoBaEsport.Application.Model.PostModel
 {
@@ -12,5 +13,6 @@ namespace MoBaEsport.Application.Model.PostModel
         public long ShareCount { get; set; }
         public long? SharePostId { get; set; }
         public Guid UserId { get; set; }
+        public IFormFile postFiles { get; set; }
     }
 }

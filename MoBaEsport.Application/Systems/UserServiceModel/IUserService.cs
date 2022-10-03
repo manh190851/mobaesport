@@ -11,5 +11,15 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
         Task<string> Login(LoginRequestModel model);
 
         Task<bool> Register(RegisterRequestModel model);
+
+        Task<UserViewModel> ViewUserFrofile(Guid userId);
+
+        Task<List<UserViewModel>> ViewFriendList(Guid userId);
+        
+        Task<List<UserViewModel>> ViewFriendRequest(Guid userId);
+
+        Task<List<UserViewModel>> ViewFollowingList(Guid userId);
+
+        Task<List<UserViewModel>> ViewFollowerList(Guid userId);
     }
 }

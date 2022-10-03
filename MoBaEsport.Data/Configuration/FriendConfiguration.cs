@@ -12,7 +12,7 @@ namespace MoBaEsport.Data.Configuration
 
             builder.HasKey(m => m.FriendId);
 
-            builder.Property(m => m.Status).IsRequired().HasMaxLength(20);
+            builder.Property(m => m.Status).IsRequired().HasConversion<string>();
             builder.Property(m => m.Created).IsRequired();
 
             builder.HasOne(m => m.AcceptUser).WithMany(m => m.AcceptFriends).HasForeignKey(m => m.AcceptId);

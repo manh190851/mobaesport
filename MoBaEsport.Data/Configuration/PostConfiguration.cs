@@ -13,7 +13,7 @@ namespace MoBaEsport.Data.Configuration
             builder.HasKey(m => m.PostId);
 
             builder.Property(m => m.Created).IsRequired();
-            builder.Property(m => m.Status).IsRequired();
+            builder.Property(m => m.Status).IsRequired().HasConversion<string>();
             builder.Property(m => m.PostContent);
             builder.Property(m => m.IsHidden).HasDefaultValue(false);
             builder.Property(m => m.ShareCount);

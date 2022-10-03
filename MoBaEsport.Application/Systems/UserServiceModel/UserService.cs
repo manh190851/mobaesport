@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
 using System;
 using System.Collections.Generic;
@@ -18,13 +19,16 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _config;
+        private readonly ESportDbContext _db;
 
-        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<AppRole> roleManager, IConfiguration config)
+        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<AppRole> roleManager, 
+            IConfiguration config, ESportDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _config = config;
+            _db = context;
         }
 
         public async Task<string> Login(LoginRequestModel model)
@@ -72,10 +76,62 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
                 Email = model.Email,
                 UserName = model.UserName,
             };
+
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded) { return true; }
+            
             return false;
+        }
+
+        public async Task<bool> ConfirmPassword(string Password, string ConfirmPassword)
+        {
+            if (ConfirmPassword == null) throw new Exception();
+
+            if(ConfirmPassword.Equals(Password)) return true;
+
+            return false;
+        }
+
+        public async Task<UserViewModel> ViewUserFrofile(Guid userId)
+        {
+            var user = _db.Users.Find(userId);
+
+            if (user == null) throw new Exception();
+
+            var profile = new UserViewModel()
+            {
+                Fullname = user.Fullname,
+                Gender = user.Gender,
+                Phone = user.Phone,
+                DOB = user.DOB,
+                Email = user.Email,
+                City = user.City,
+                Nation = user.Nation,
+                ImageUrl = user.ImageUrl
+            };
+
+            return profile;
+        }
+
+        public Task<List<UserViewModel>> ViewFriendList(Guid userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<UserViewModel>> ViewFriendRequest(Guid userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<UserViewModel>> ViewFollowingList(Guid userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<UserViewModel>> ViewFollowerList(Guid userId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

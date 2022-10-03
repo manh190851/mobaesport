@@ -12,6 +12,9 @@
 
   <ItemGroup>
     <Folder Include="Systems\AppRoleModel\" />
+    <Folder Include="Systems\FileStorageService\Image\" />
+    <Folder Include="Systems\FileStorageService\Document\" />
+    <Folder Include="Systems\FileStorageService\Video\" />
   </ItemGroup>
 
   <ItemGroup>

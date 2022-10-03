@@ -16,5 +16,6 @@ namespace MoBaEsport.Data.EntityModel
         public List<Comment>? Comments { get; set; }
         public Guid UserId { get; set; }
         public AppUser User { get; set; }
+        public List<PostFile> PostFiles { get; set; }
     }
 }

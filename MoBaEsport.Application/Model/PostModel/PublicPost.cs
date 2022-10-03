@@ -1,7 +1,9 @@
-﻿using MoBaEsport.Application.Model.CommentModel;
+﻿using Microsoft.AspNetCore.Http;
+using MoBaEsport.Application.Model.CommentModel;
 using MoBaEsport.Application.Model.ReactionModel;
 using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
+using System.Net.Http.Headers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
