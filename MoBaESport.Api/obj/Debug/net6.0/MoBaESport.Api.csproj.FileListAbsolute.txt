@@ -76,3 +76,6 @@ C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Microsoft.Owin.Security.OAuth.dll
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\Owin.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

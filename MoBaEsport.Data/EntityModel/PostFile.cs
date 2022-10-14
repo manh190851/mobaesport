@@ -18,7 +18,7 @@ namespace MoBaEsport.Data.EntityModel
 
         public DateTime DateCreate { get; set; }
 
-        public int Size { get; set; }
+        public long Size { get; set; }
 
         public Post Post { get; set; }
     }

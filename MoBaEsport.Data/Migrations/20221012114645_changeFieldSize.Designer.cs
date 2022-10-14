@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoBaEsport.Data.DBContextModel;
 
@@ -11,9 +12,10 @@ using MoBaEsport.Data.DBContextModel;
 namespace MoBaEsport.Data.Migrations
 {
     [DbContext(typeof(ESportDbContext))]
-    partial class ESportDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221012114645_changeFieldSize")]
+    partial class changeFieldSize
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

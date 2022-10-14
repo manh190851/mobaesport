@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "z6NBlYFqsxQA0WdU+8j4mlSCuW98oRTg9iedOvRvJIDU9fRqICKfdKKTp+ZC5q0sY02PU3aCEvUSqXdbq1Y12g==",
+  "dgSpecHash": "aLAY/Q9CF4f/+5x465m08dga7SQ1ni16sGzGW2/48/StUVmobctApIJaCIBNlnG/WkNnkK8gFhKvEND4EjFF6Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaESport.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MANH\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\MANH\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\MANH\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\MANH\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\MANH\\.nuget\\packages\\microsoft.aspnet.identity.owin\\2.2.3\\microsoft.aspnet.identity.owin.2.2.3.nupkg.sha512",
     "C:\\Users\\MANH\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

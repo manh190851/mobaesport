@@ -9,16 +9,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MoBaEsport.Application.Systems.FileStorageService;
+using Microsoft.EntityFrameworkCore;
 
 namespace MoBaEsport.Application.Model.PostModel
 {
     public class PublicPost : IPublicPost
     {
         private ESportDbContext db;
+        private IStorageService _storageService;
 
-        public PublicPost(ESportDbContext context)
+        public PublicPost(ESportDbContext context, IStorageService storageService)
         {
             this.db = context;
+            this._storageService = storageService;
         }
 
         public async Task<long> Create(PostCreateModel model)
@@ -33,6 +37,20 @@ namespace MoBaEsport.Application.Model.PostModel
                 SharePostId = model.SharePostId,
                 UserId = model.UserId
             };
+
+            if(model.postFiles != null)
+            {
+                post.PostFiles = new List<PostFile>()
+                {
+                    new PostFile()
+                    {
+                        FilePath = await this.SaveFile(model.postFiles),
+                        Size = model.postFiles.Length,
+                        DateCreate = DateTime.Now,
+                        IsDefault = true
+                    }
+                };
+            }
 
             db.Posts.Add(post);
             
@@ -62,6 +80,13 @@ namespace MoBaEsport.Application.Model.PostModel
             post.PostContent = model.PostContent;
             post.Status = model.Status;
             post.Created = model.Created;
+
+            if (model.postFiles != null)
+            {
+                var postFile = await db.PostFiles.FirstOrDefaultAsync(i => i.IsDefault == true && i.PostId == PostId);
+                postFile.FilePath = await this.SaveFile(model.postFiles);
+                postFile.Size = model.postFiles.Length;
+            }
 
             return await db.SaveChangesAsync();
         }
@@ -236,6 +261,14 @@ namespace MoBaEsport.Application.Model.PostModel
             }
 
             return await db.SaveChangesAsync();
+        }
+
+        public async Task<string> SaveFile(IFormFile file) 
+        {
+            var originalFilename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            var filename = $"{Guid.NewGuid()}{Path.GetExtension(originalFilename)}";
+            await _storageService.SaveFileAsync(file.OpenReadStream(), filename);
+            return filename;
         }
     }
 }

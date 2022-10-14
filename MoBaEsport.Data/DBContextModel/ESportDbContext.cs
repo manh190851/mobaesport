@@ -25,6 +25,7 @@ namespace MoBaEsport.Data.DBContextModel
         public DbSet<Friend> Friends { get; set; }
         public DbSet<Follow> Follows { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<PostFile> PostFiles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -46,6 +47,7 @@ namespace MoBaEsport.Data.DBContextModel
             builder.ApplyConfiguration(new FriendConfiguration()); //Friend
             builder.ApplyConfiguration(new MessageConfiguration()); //Message
             builder.ApplyConfiguration(new ChatBoxConfiguration()); //ChatBox
+            builder.ApplyConfiguration(new PostFileConfiguration()); //Postfile
         }
     }
 }

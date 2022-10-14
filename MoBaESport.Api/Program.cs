@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +12,7 @@ using MoBaEsport.Application.Model.MessageModel;
 using MoBaEsport.Application.Model.PostModel;
 using MoBaEsport.Application.Model.ReactionModel;
 using MoBaEsport.Application.Model.ReplyModel;
+using MoBaEsport.Application.Systems.FileStorageService;
 using MoBaEsport.Application.Systems.UserServiceModel;
 using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
@@ -41,7 +44,11 @@ builder.Services.AddTransient<IManageFriend, ManageFriend>();
 builder.Services.AddTransient<Microsoft.AspNetCore.Identity.UserManager<AppUser>, Microsoft.AspNetCore.Identity.UserManager<AppUser>>();
 builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IStorageService, FileStorageService>();
 
+builder.Services.AddTransient<IValidator<LoginRequestModel>, LoginValidator>();
+
+builder.Services.AddControllers().AddFluentValidation();
 
 //Add Swagger
 builder.Services.AddSwaggerGen(options =>
