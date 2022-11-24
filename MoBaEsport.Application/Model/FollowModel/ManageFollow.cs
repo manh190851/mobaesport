@@ -17,32 +17,42 @@ namespace MoBaEsport.Application.Model.FollowModel
             this.db = db;
         }
 
-        public async Task<long> Create(FollowCreateModel model)
+        public async Task<bool> Create(FollowCreateModel model)
         {
             var follow = new Follow()
             {
-                FollowId = model.FollowId,
                 FollowerId = model.FollowerId,
                 FollowingId = model.FollowingId,
                 Created = model.Created
             };
 
             db.Follows.Add(follow);
+            await db.SaveChangesAsync();
 
-            return await db.SaveChangesAsync();
+            return true;
         }
 
-        public async Task<long> Delete(Guid userId, long followId) //Un follow
+        public async Task<bool> Delete(long followId) //Un follow
         {
             var follow = db.Follows.Find(followId);
 
             if (follow == null) throw new Exception();
 
-            if (follow.FollowerId != userId) throw new Exception();
-
             db.Follows.Remove(follow);
 
-            return await db.SaveChangesAsync();
+            await db.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<Follow> GetFollow(Guid targetId, Guid userId)
+        {
+            var follow = db.Follows.ToList().Where(i => i.FollowerId == userId && i.FollowingId == targetId);
+            if(follow == null) throw new Exception();
+
+            var result = follow.First();
+
+            return result;
         }
     }
 }

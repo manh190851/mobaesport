@@ -9,16 +9,14 @@ namespace MoBaESport.Api.Controllers
     public class PostsController : ControllerBase
     {
         private readonly IPublicPost _publicPost;
-        private readonly IManagePost _managePost;
 
-        public PostsController(IPublicPost publicPost, IManagePost managePost)
+        public PostsController(IPublicPost publicPost)
         {
             _publicPost = publicPost;
-            _managePost = managePost;
         }
 
-        [HttpGet("view-post-byuserId/{userId}")]
-        public async Task<IActionResult> ViewPostByUserId(Guid userId)
+        [HttpGet("view-post-userId")]
+        public async Task<IActionResult> ViewPostByUserId([FromQuery]Guid userId)
         {
             var actionResult = await _publicPost.ViewPostsByUserId(userId);
 
@@ -37,8 +35,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(listPost);
         }
 
-        [HttpGet("view-post-comment/{postId}")]
-        public async Task<IActionResult> ViewComment(long postId)
+        [HttpGet("view-post-comment")]
+        public async Task<IActionResult> ViewComment([FromQuery] long postId)
         {
             var comments = await _publicPost.ViewComment(postId);
 
@@ -57,30 +55,29 @@ namespace MoBaESport.Api.Controllers
             return Ok(reactions);
         }
 
-        [HttpPost]
+        [HttpPost("create-post")]
         public async Task<IActionResult> Create([FromForm]PostCreateModel model)
         {
+
             var postId = await _publicPost.Create(model);
 
-            if (postId == 0) return BadRequest();
+            if (postId == -1) return BadRequest();
 
-            var post = await _publicPost.GetPost(postId);
-
-            return CreatedAtAction(nameof(ViewPostByUserId),new {userId = post.UserId }, post);
+            return Ok(postId);
         }
 
-        [HttpPut("{postId}")]
-        public async Task<IActionResult> Update(long postId,[FromForm]PostUpdateModel model)
+        [HttpPut("update-post")]
+        public async Task<IActionResult> Update([FromBody]PostUpdateModel model)
         {
-            var post = await _publicPost.Update(postId, model);
+            var post = await _publicPost.Update(model);
 
-            if(postId == 0) return BadRequest();
+            if(post == 0) return BadRequest();
 
             return Ok("Update sucessfully");
         }
 
-        [HttpDelete("{postId}")]
-        public async Task<IActionResult> Delete(Guid userId, long postId)
+        [HttpDelete("delete-post")]
+        public async Task<IActionResult> Delete([FromQuery] Guid userId, [FromQuery] long postId)
         {
             var post = await _publicPost.Delete(userId, postId);
 
@@ -89,64 +86,40 @@ namespace MoBaESport.Api.Controllers
             return Ok("Delete sucessfully");
         }
 
-        [HttpPatch("hidden-post/{postId}")]
-        public async Task<IActionResult> HiddenPost(long postId)
-        {
-            var post = await _publicPost.HiddenPost(postId);
-
-            if (postId == 0) return BadRequest();
-
-            return Ok("Sucessfully");
-        }
-
-        [HttpPatch("open-post/{postId}")]
-        public async Task<IActionResult> OpenPost(long postId)
-        {
-            var post = await _publicPost.OpenPost(postId);
-
-            if (postId == 0) return BadRequest();
-
-            return Ok("Sucessfully");
-        }
-
-        [HttpPatch("report-post/{postId}")]
-        public async Task<IActionResult> ReportPost(long postId)
-        {
-            var post = await _publicPost.ReportPost(postId);
-
-            if (postId == 0) return BadRequest();
-
-            return Ok("Sucessfully");
-        }
-
-        [HttpPatch("lock-post/{postId}")]
-        public async Task<IActionResult> Lock(long postId)
-        {
-            var post = await _managePost.Lock(postId);
-
-            if (post == 0) return BadRequest();
-
-            return Ok(post);
-        }
-
-        [HttpPatch("unlock-post/{postId}")]
-        public async Task<IActionResult> UnLock(long postId)
-        {
-            var post = await _managePost.UnLock(postId);
-
-            if (post == 0) return BadRequest();
-
-            return Ok();
-        }
-
-        [HttpGet("view-report-post/{postId}")]
+        [HttpGet("view-report-post")]
         public async Task<IActionResult> ViewReportPost()
         {
-            var posts = await _managePost.ViewReportPost();
+            var posts = await _publicPost.ViewReportPost();
 
             if (posts == null) return BadRequest();
 
             return Ok(posts);
+        }
+
+        [HttpGet("count-post")]
+        public async Task<IActionResult> CountPost()
+        {
+            long counter = await _publicPost.CountPost();
+            return Ok(counter);
+        }
+
+        [HttpPut("share-post")]
+        public async Task<IActionResult> SharePost([FromQuery] PostShareModel model)
+        {
+            var result = await _publicPost.Share(model);
+            if(result == 0) return BadRequest();
+
+            return Ok(result);
+        }
+
+        [HttpPut("change-status")]
+        public async Task<IActionResult> ChangeStatus([FromBody] PostUpdateModel model)
+        {
+            var post = await _publicPost.GetPost(model.postId);
+            if(post == null) return BadRequest();
+            var result = await _publicPost.UpdateStatus(model);
+            if(result == 0) return BadRequest();
+            return Ok(result);
         }
     } 
 }

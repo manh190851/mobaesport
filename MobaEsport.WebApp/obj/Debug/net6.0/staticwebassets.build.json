@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DO6/jTXoov5NG4LVuC0VpeBZKjLXJkAMxc1G+W6DIAM=",
+  "Hash": "m6Ehj+XKZhpBO5aIrg/EsaNxYYIlj0E57yX+828I4K8=",
   "Source": "MobaEsport.WebApp",
   "BasePath": "_content/MobaEsport.WebApp",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MobaEsport.WebApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\css\\base.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "css/site.css",
+      "RelativePath": "css/base.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,7 +65,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot\\css\\base.css"
+    },
+    {
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\css\\index.css",
+      "SourceId": "MobaEsport.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
+      "BasePath": "_content/MobaEsport.WebApp",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\css\\index.css.map",
+      "SourceId": "MobaEsport.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
+      "BasePath": "_content/MobaEsport.WebApp",
+      "RelativePath": "css/index.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css.map"
     },
     {
       "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\favicon.ico",
@@ -85,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\imgs\\.DS_Store",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "js/site.js",
+      "RelativePath": "imgs/.DS_Store",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,15 +133,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\imgs\\.DS_Store"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\imgs\\banner_login.jpeg",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
+      "RelativePath": "imgs/banner_login.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,15 +150,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "OriginalItemSpec": "wwwroot\\imgs\\banner_login.jpeg"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\imgs\\card.jpg",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
+      "RelativePath": "imgs/card.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,15 +167,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "OriginalItemSpec": "wwwroot\\imgs\\card.jpg"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\imgs\\game_menu_1.jpeg",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
+      "RelativePath": "imgs/game_menu_1.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -150,15 +184,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "OriginalItemSpec": "wwwroot\\imgs\\game_menu_1.jpeg"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\imgs\\no_profile_small.jpeg",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "RelativePath": "imgs/no_profile_small.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,15 +201,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "OriginalItemSpec": "wwwroot\\imgs\\no_profile_small.jpeg"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\imgs\\slide.jpg",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "RelativePath": "imgs/slide.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -184,15 +218,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "OriginalItemSpec": "wwwroot\\imgs\\slide.jpg"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\.DS_Store",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "RelativePath": "lib/.DS_Store",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -201,15 +235,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\.DS_Store"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\.DS_Store",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "RelativePath": "lib/bootstrap/.DS_Store",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -218,15 +252,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\.DS_Store"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -235,15 +269,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -252,15 +286,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.icon.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap.icon.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -269,15 +303,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.icon.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -286,15 +320,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap.rtl.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -320,15 +354,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -337,15 +371,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -354,15 +388,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -371,15 +405,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -388,15 +422,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -405,15 +439,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -422,15 +456,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -439,15 +473,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -456,15 +490,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -473,15 +507,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -490,15 +524,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -507,15 +541,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -524,15 +558,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -541,15 +575,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -558,15 +592,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -575,15 +609,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -592,15 +626,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -609,15 +643,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -626,15 +660,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -643,15 +677,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -660,15 +694,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -677,15 +711,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -694,15 +728,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -711,15 +745,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -728,15 +762,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -745,15 +779,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -762,15 +796,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "RelativePath": "lib/bootstrap/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -779,15 +813,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\fonts\\bootstrap-icons.woff",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
+      "RelativePath": "lib/bootstrap/fonts/bootstrap-icons.woff",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -796,15 +830,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\fonts\\bootstrap-icons.woff"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\fonts\\bootstrap-icons.woff2",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
+      "RelativePath": "lib/bootstrap/fonts/bootstrap-icons.woff2",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -813,15 +847,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\fonts\\bootstrap-icons.woff2"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\.DS_Store",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
+      "RelativePath": "lib/bootstrap/js/.DS_Store",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -830,15 +864,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\.DS_Store"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "RelativePath": "lib/bootstrap/js/bootstrap.bundle.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -847,15 +881,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/bootstrap/LICENSE",
+      "RelativePath": "lib/bootstrap/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -864,15 +898,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery/dist/jquery.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -881,15 +915,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery/dist/jquery.min.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -898,15 +932,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery/dist/jquery.min.map",
+      "RelativePath": "lib/bootstrap/js/bootstrap.esm.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -915,15 +949,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery/LICENSE.txt",
+      "RelativePath": "lib/bootstrap/js/bootstrap.esm.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -932,15 +966,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.esm.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -949,15 +983,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -966,15 +1000,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -983,15 +1017,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1000,15 +1034,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation/LICENSE.md",
+      "RelativePath": "lib/bootstrap/js/bootstrap.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1017,15 +1051,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js.map",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "RelativePath": "lib/bootstrap/js/bootstrap.min.js.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1034,15 +1068,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\bootstrap-5.2.2-dist.zip",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "RelativePath": "lib/bootstrap-5.2.2-dist.zip",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1051,15 +1085,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap-5.2.2-dist.zip"
     },
     {
-      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\sass\\index.scss",
       "SourceId": "MobaEsport.WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MobaEsport.WebApp\\wwwroot\\",
       "BasePath": "_content/MobaEsport.WebApp",
-      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "RelativePath": "sass/index.scss",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1068,7 +1102,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\sass\\index.scss"
     }
   ]
 }

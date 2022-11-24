@@ -1,0 +1,113 @@
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  background-color: #fff;
+}
+header .nav {
+  height: 60px;
+}
+header .nav__logo {
+  font-size: 2rem;
+  max-width: 250px;
+}
+header .nav__search {
+  margin-right: auto;
+  margin-left: 1rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+header .nav__search input, header .nav__search button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header .nav__search button {
+  background-color: #fff;
+  border-radius: 1rem;
+}
+header .nav__right .navitem {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  min-width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+main {
+  margin-top: calc(60px + 1rem);
+}
+
+.card .card-img .card__btn-left {
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+}
+.card .card-img .card__btn-right {
+  position: absolute;
+  bottom: 1rem;
+  right: 0.5rem;
+}
+.card .card__skill__desc {
+  font-size: 0.8rem;
+}
+.card .img__follows {
+  width: 1.8rem;
+  background-color: #000000;
+  color: #fff;
+}
+.card small {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.profile__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.profile__left p {
+  font-size: 14px;
+}
+.profile__left p span {
+  color: #999;
+}
+
+.pr__gr__imgs img {
+  width: 150px;
+}
+
+.btn-openchat {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: rotate(-90deg);
+}
+
+.chat__msg {
+  background-color: #f0f0f0;
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 960px) {
+  .sidbar__app {
+    display: none;
+  }
+  .navitem {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

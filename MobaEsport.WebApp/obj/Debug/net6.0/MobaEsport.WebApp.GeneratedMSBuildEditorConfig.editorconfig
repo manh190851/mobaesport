@@ -11,7 +11,7 @@ build_property.RootNamespace = MobaEsport.WebApp
 build_property.ProjectDir = C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp
 build_property._RazorSourceGeneratorDebug = 
 
@@ -23,12 +23,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/Post/CreatePost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxDcmVhdGVQb3N0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/Post/GetPostById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxHZXRQb3N0QnlJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/User/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/User/ListUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/User/ViewFriendRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWaWV3RnJpZW5kUmVxdWVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/User/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWaWV3UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MANH/source/repos/MOBAEsport/MobaEsport.WebApp/Views/_ViewImports.cshtml]

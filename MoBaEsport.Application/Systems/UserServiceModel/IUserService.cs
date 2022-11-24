@@ -10,16 +10,21 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
     {
         Task<string> Login(LoginRequestModel model);
 
-        Task<bool> Register(RegisterRequestModel model);
+        Task<string> Register(RegisterRequestModel model);
 
-        Task<UserViewModel> ViewUserFrofile(Guid userId);
+        Task<List<UserManagerModel>> GetListUser();
 
-        Task<List<UserViewModel>> ViewFriendList(Guid userId);
+        Task<UserUpdateModel> GetUserById(Guid id);
+
+        Task<bool> IsLockedUser();
+
+        Task<bool> IsUnlockedUser();
+
+        Task<UserViewModel> GetUserProfile(Guid userId);
+
+        Task<bool> UpdateProfile(Guid id, UserUpdateModel model);
+        Task<List<UserViewModel>> GetSearchingUser(string key);
+
         
-        Task<List<UserViewModel>> ViewFriendRequest(Guid userId);
-
-        Task<List<UserViewModel>> ViewFollowingList(Guid userId);
-
-        Task<List<UserViewModel>> ViewFollowerList(Guid userId);
     }
 }

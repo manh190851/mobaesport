@@ -1,0 +1,78 @@
+﻿@using Microsoft.AspNet.Identity
+@using MoBaEsport.Application.Systems.UserServiceModel
+@model UserViewModel
+@{
+}
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<img class="img-profile" src="@Model.ImageUrl" width="50dp" height="50dp" />
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                FullName:
+            </td>
+            <td>
+                @Model.Fullname
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender:
+            </td>
+            <td>
+                @Model.Gender
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Date of birth:
+            </td>
+            <td>
+                @Model.DOB
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone Number:
+            </td>
+            <td>
+                @Model.Phone
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nation:
+            </td>
+            <td>
+                @Model.Nation
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City:
+            </td>
+            <td>
+                @Model.City
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                @Model.Email
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn-danger" href="@Url.Action("Follow", "User", new { followingId = Model.Id, userId = User.Identity.GetUserId()})">Edit Profile</a>
+<a class="btn-success" href="@Url.Action("EditProfile", "User", new { userId = Model.Id})">Edit Profile</a>
+<a class="btn-success" href="@Url.Action("CreateFriendRequest", "User", new { targetId = Model.Id, userId= User.Identity.GetUserId()})">Make friend</a>
+<a class="btn-success" href="@Url.Action("ViewFriendRequest", "User", new { userId= User.Identity.GetUserId()})">View list ask friend</a>
+<a class="btn-success" href="@Url.Action("ViewFriendList", "User", new { userId= User.Identity.GetUserId()})">View list friend</a>

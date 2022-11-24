@@ -15,7 +15,7 @@ namespace MoBaESport.Api.Controllers
             _manageReaction = manageReaction;
         }
 
-        [HttpPost]
+        [HttpPost("create-reaction")]
         public async Task<IActionResult> Create([FromForm] ReactionCreateModel model)
         {
             var result = await _manageReaction.Create(model);
@@ -25,7 +25,7 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("{reactionId}")]
+        [HttpPut("update-reaction")]
         public async Task<IActionResult> Update([FromForm] ReactionUpdateModel model, long reactionId)
         {
             var result = await _manageReaction.Update(model, reactionId);
@@ -35,7 +35,7 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("{reactionId}")]
+        [HttpDelete("delete-reaction")]
         public async Task<IActionResult> Delete(long ReactionId)
         {
             var result = await _manageReaction.Delete(ReactionId);

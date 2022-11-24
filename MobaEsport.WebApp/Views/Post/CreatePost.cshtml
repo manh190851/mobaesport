@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNet.Identity
+@using MoBaEsport.Application.Model.PostModel
+@using MoBaEsport.Data.Enum
+@model PostCreateModel
+@{
+    ViewData["Title"] = "Add Post";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (ViewData["cPostError"] != null){
+    <span>@ViewData["cPostError"]</span>
+}
+<form class="form-control" asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Content</label>
+        <input type="text" class="form-control" asp-for="PostContent" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Create</label>
+        <input type="date" class="form-control" asp-for="Created" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Hidden</label>
+        <input type="checkbox" class="form-check-inline" asp-for="IsHidden" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="file" class="form-control" asp-for="postFiles" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input list="status" class="form-control" asp-for="Status" />
+        <datalist id="status" class="dropdown-menu">
+            <option value="@PostStatus.Public">Public</option>
+            <option value="@PostStatus.Private">Private</option>
+        </datalist>
+    </div>
+    <input type="hidden" asp-for="SharePostId" />
+    <input type="hidden" asp-for="UserId"/>
+    <button class="btn-primary" type="submit">Submit</button>
+</form>

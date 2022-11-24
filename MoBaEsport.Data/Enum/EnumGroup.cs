@@ -8,28 +8,30 @@ namespace MoBaEsport.Data.Enum
 {
     public enum GenderEnum
     {
+        Default,
         Male,
-        Female
+        Female,
+        Other
     }
 
     public enum UserStatus
     {
-        Availablility,
-        Locked
+        Availablility = 0,
+        Locked = 1
     }
 
     public enum FriendStatus
     {
-        Friend,
-        Unfriend,
-        Block,
-        Requesting,
+        Unfriend = 0,
+        Friend = 1,
+        Block = 2,
+        Requesting = 3,
     }
 
     public enum FollowStatus
     {
-        Following,
-        UnFollowing
+        UnFollowing = 0,
+        Following = 1
     }
 
     public enum PostStatus
@@ -43,13 +45,13 @@ namespace MoBaEsport.Data.Enum
 
     public enum Reactions
     {
-        Like,
-        Dislike
+        Like = 0,
+        Dislike = 1
     }
 
     public enum LoginStatus
     {
-        Login,
-        Logoff
+        Login = 0,
+        Logoff = 1
     }
 }

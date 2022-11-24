@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MoBaEsport.Data.DBContextModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MoBaEsport.Application.Systems.UserServiceModel
 {
@@ -45,9 +47,10 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.GivenName, user.Fullname),
                 new Claim(ClaimTypes.DateOfBirth, user.DOB.ToString()),
-                new Claim(ClaimTypes.Country, user.Nation),
                 new Claim(ClaimTypes.MobilePhone, user.Phone),
-                new Claim(ClaimTypes.Role, string.Join(", ", role))
+                new Claim(ClaimTypes.Role, string.Join(", ", role)),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:key"]));
@@ -62,45 +65,78 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<bool> Register(RegisterRequestModel model)
+        public async Task<string> Register(RegisterRequestModel model)
         {
             var user = new AppUser()
             {
                 Fullname = model.Fullname,
-                Gender = model.Gender,
-                DOB = model.DOB,
-                Phone = model.Phone,
-                Nation = model.Nation,
-                City = model.City,
-                ImageUrl = model.ImageUrl,
                 Email = model.Email,
                 UserName = model.UserName,
+                Phone = model.Phone,
+                Gender = model.Gender,
+                DOB = model.DOB
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
-            if (result.Succeeded) { return true; }
-            
-            return false;
+            if (!result.Succeeded) { return null; }
+
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.GivenName, user.Fullname),
+                new Claim(ClaimTypes.DateOfBirth, user.DOB.ToString()),
+                new Claim(ClaimTypes.MobilePhone, user.Phone),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(_config["Tokens:Issuer"],
+                _config["Tokens:Issuer"],
+                claims,
+                expires: DateTime.Now.AddHours(2),
+                signingCredentials: creds);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<bool> ConfirmPassword(string Password, string ConfirmPassword)
+        public async Task<List<UserManagerModel>> GetListUser()
         {
-            if (ConfirmPassword == null) throw new Exception();
-
-            if(ConfirmPassword.Equals(Password)) return true;
-
-            return false;
+            List<UserManagerModel> managerList = new List<UserManagerModel>();
+            var users = _db.Users.ToList();
+            foreach(var user in users)
+            {
+                UserManagerModel model = new UserManagerModel()
+                {
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    Fullname = user.Fullname,
+                    DOB = user.DOB,
+                    Gender = user.Gender,
+                    Phone = user.Phone,
+                    City = user.City,
+                    Nation = user.Nation,
+                    Email = user.Email,
+                    loginStatus = user.LoginStatus,
+                    userStatus = user.UserStatus
+                };
+                managerList.Add(model);
+            }
+            return managerList;
         }
 
-        public async Task<UserViewModel> ViewUserFrofile(Guid userId)
+        public async Task<UserViewModel> GetUserProfile(Guid userId)
         {
-            var user = _db.Users.Find(userId);
+            var user = await _db.Users.FindAsync(userId);
 
             if (user == null) throw new Exception();
 
             var profile = new UserViewModel()
             {
+                Id = user.Id,
                 Fullname = user.Fullname,
                 Gender = user.Gender,
                 Phone = user.Phone,
@@ -108,30 +144,89 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
                 Email = user.Email,
                 City = user.City,
                 Nation = user.Nation,
-                ImageUrl = user.ImageUrl
+                ImageUrl = user.ImageUrl,
+                friendList = await GetListFriend(userId)
             };
 
             return profile;
         }
 
-        public Task<List<UserViewModel>> ViewFriendList(Guid userId)
+        private async Task<List<Friend>> GetListFriend(Guid userId)
+        {
+            var friend = (List<Friend>) _db.Friends.ToList().Where(i => (i.RequestId == userId || i.AcceptId == userId) && i.Status == Data.Enum.FriendStatus.Friend);
+            if(friend == null) throw new ArgumentNullException();
+            return friend;
+        }
+
+        public Task<bool> IsLockedUser()
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<UserViewModel>> ViewFriendRequest(Guid userId)
+        public Task<bool> IsUnlockedUser()
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<UserViewModel>> ViewFollowingList(Guid userId)
+        public async Task<bool> UpdateProfile(Guid userId, UserUpdateModel model)
         {
-            throw new NotImplementedException();
+            if(await _userManager.Users.AnyAsync(m => m.Email == model.Email && m.Id != userId))
+            {
+                return false;
+            }
+
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            user.Fullname = model.Fullname;
+            user.Email = model.Email;
+            user.DOB = model.DOB;
+            user.Gender = model.Gender;
+            user.Phone = model.Phone;
+            user.Nation = model.Nation;
+            user.City = model.City;
+
+            var result = await _userManager.UpdateAsync(user);
+            if(!result.Succeeded) return false; 
+            return true;
         }
 
-        public Task<List<UserViewModel>> ViewFollowerList(Guid userId)
+        public async Task<UserUpdateModel> GetUserById(Guid userId)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            if(user == null) { return null; }
+            var userView = new UserUpdateModel()
+            {
+                Id = user.Id,
+                Fullname = user.Fullname,
+                Gender = user.Gender,
+                DOB = user.DOB,
+                Phone = user.Phone,
+                Nation = user.Nation,
+                City = user.City,
+                Email = user.Email
+            };
+            return userView;
+        }
+        public async Task<List<UserViewModel>> GetSearchingUser(string key)
+        {
+            var users = _userManager.Users.Where(i => i.Fullname.ToLower().Contains(key));
+            List<UserViewModel> result = new List<UserViewModel>();
+            foreach (var user in users)
+            {
+                UserViewModel userView = new UserViewModel()
+                {
+                    Id = user.Id,
+                    Fullname = user.Fullname,
+                    Gender = user.Gender,
+                    DOB = user.DOB,
+                    Email = user.Email,
+                    City = user.City,
+                    Nation = user.Nation,
+                    ImageUrl = user.ImageUrl,
+                    Phone = user.Phone,
+                };
+                result.Add(userView);
+            }
+            return result;
         }
     }
 }

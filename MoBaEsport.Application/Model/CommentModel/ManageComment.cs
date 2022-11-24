@@ -34,37 +34,59 @@ namespace MoBaEsport.Application.Model.CommentModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<long> Delete(Guid userId, long commentId)
+        public async Task<long> Delete(long commentId)
         {
             var comment = db.Comments.Find(commentId);
 
             if (comment == null) throw new ArgumentNullException("Cannot find");
-            if (comment.UserId != userId)
-            {
-                throw new Exception("You cannot remove other's comment!!");
-            }
             db.Comments.Remove(comment);
 
             return await db.SaveChangesAsync();
         }
 
-        public Task<ReactionViewModel> GetReaction(Reaction reactoget)
+        public async Task<List<ReplyViewModel>> GetReplies(long commentId)
         {
-            throw new NotImplementedException();
+            if (commentId == null) throw new Exception("Not Found!!");
+
+            List<ReplyViewModel> replyList = new List<ReplyViewModel>();
+            var replies = db.Replies.ToList().Where(i => i.ComId == commentId);
+
+            foreach(Reply reply in replies)
+            {
+                ReplyViewModel replyViewModel = new ReplyViewModel()
+                {
+                    ReplyContent = reply.ReplyContent,
+                    Created = reply.Created,
+                    UserId = reply.UserId,
+                    CommentId = reply.ComId,
+                };
+                replyList.Add(replyViewModel);
+            }
+            
+            return replyList;
         }
 
-        public async Task<ReplyViewModel> GetReply(Reply replytoget)
+        public async Task<List<ReactionViewModel>> GetReaction(long commentId)
         {
-            if (replytoget == null) throw new Exception("Not Found!!");
+            if (commentId == null) throw new Exception("Not Found!!");
 
-            ReplyViewModel replyViewModel = new ReplyViewModel()
+            List<ReactionViewModel> reactionViews = new List<ReactionViewModel>();
+            var reaction = db.Reactions.ToList().Where(i => i.ComId == commentId);
+
+            foreach(Reaction reac in reaction)
             {
-                ReplyContent = replytoget.ReplyContent,
-                Created = replytoget.Created,
-                UserId = replytoget.UserId,
-                CommentId = replytoget.ComId,
-            };
-            return replyViewModel;
+                ReactionViewModel reactionViewModel = new ReactionViewModel()
+                {
+                    ReacName = reac.ReacName,
+                    Created = reac.Created,
+                    UserId = reac.UserId,
+                    CommentId = commentId,
+                    comment = reac.Comment,
+                };
+                reactionViews.Add(reactionViewModel);
+            }
+            
+            return reactionViews;
         }
 
         public async Task<long> Update(CommentUpdateModel model, long commentId)
@@ -77,25 +99,6 @@ namespace MoBaEsport.Application.Model.CommentModel
             comment.Created = model.Created;
 
             return await db.SaveChangesAsync();
-        }
-
-        public Task<List<ReactionViewModel>> ViewListReaction(long commentId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<ReplyViewModel>> ViewListReply(long commentId)
-        {
-            var replies = db.Replies.ToList().Where(m => m.ComId == commentId);
-
-            var listviewreply = new List<ReplyViewModel>();
-
-            foreach(var reply in replies)
-            {
-                var replyViewModel = await GetReply(reply);
-                listviewreply.Add(replyViewModel);
-            };
-            return listviewreply;
         }
     }
 }

@@ -153,7 +153,6 @@ namespace MoBaEsport.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -197,7 +196,6 @@ namespace MoBaEsport.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nation")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -247,7 +245,6 @@ namespace MoBaEsport.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ChatBoxId"), 1L, 1);
 
                     b.Property<string>("ChatBoxColor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("FriendId")
@@ -394,7 +391,6 @@ namespace MoBaEsport.Data.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("PostContent")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("ShareCount")

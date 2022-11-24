@@ -47,9 +47,19 @@ namespace MoBaEsport.Application.Model.ReplyModel
             return await db.SaveChangesAsync();
         }
 
-        public Task<ReactionViewModel> GetReaction(Reaction reactoget)
+        public async Task<ReplyViewModel> GetReply(long replyId)
         {
-            throw new NotImplementedException();
+            var reply = db.Replies.Find(replyId);
+
+            if (reply == null) throw new Exception("Not Found");
+
+            return new ReplyViewModel {
+                ReplyId = replyId,
+                ReplyContent = reply.ReplyContent,
+                Created = reply.Created,
+                CommentId = reply.ComId,
+                UserId = reply.UserId,
+            };
         }
 
         public async Task<long> Update(ReplyUpdateModel model, long replyId)
@@ -64,11 +74,6 @@ namespace MoBaEsport.Application.Model.ReplyModel
             db.Replies.Update(reply);
 
             return await db.SaveChangesAsync();
-        }
-
-        public Task<List<ReactionViewModel>> ViewListReaction(long replyId)
-        {
-            throw new NotImplementedException();
         }
     }
 }

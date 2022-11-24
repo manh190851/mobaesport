@@ -1,0 +1,38 @@
+﻿@using MoBaEsport.Application.Systems.UserServiceModel
+@model UserUpdateModel
+@{
+    ViewData["title"] = "Change Info";
+}
+
+<h2 style="text-align:center">@ViewData["title"]</h2>
+
+<form class="form-control" method="post" asp-action="EditProfile" asp-controller="User" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Gender" />
+    <div class="mb-3">
+        <label class="form-label">Fullname</label>
+        <input type="text" class="form-control" asp-for="Fullname" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Birthday</label>
+        <input type="date" class="form-control" asp-for="DOB" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-control" asp-for="Phone" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <input type="text" class="form-control" asp-for="City" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nation</label>
+        <input type="text" class="form-control" asp-for="Nation" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" />
+    </div>
+
+    <button class="btn-primary" type="submit">Create</button>
+</form>

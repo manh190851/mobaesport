@@ -13,9 +13,9 @@ namespace MoBaEsport.Data.EntityModel
         public string Fullname { get; set; }
         public GenderEnum Gender { get; set; }
         public DateTime DOB { get; set; }
-        public string Phone { get; set; }
-        public string Nation { get; set; }
-        public string City { get; set; }
+        public string? Phone { get; set; }
+        public string? Nation { get; set; }
+        public string? City { get; set; }
         public string? ImageUrl { get; set; }
         public DateTime LastLogin { get; set; }
         public LoginStatus LoginStatus { get; set; }

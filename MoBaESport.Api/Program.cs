@@ -16,6 +16,8 @@ using MoBaEsport.Application.Systems.FileStorageService;
 using MoBaEsport.Application.Systems.UserServiceModel;
 using MoBaEsport.Data.DBContextModel;
 using MoBaEsport.Data.EntityModel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,10 +31,13 @@ builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<ESportDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options => {
+        options.SerializerSettings.Converters.Add(new StringEnumConverter());
+        options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    });
 
 // Trasient services
-builder.Services.AddTransient<IManagePost, ManagePost>();
 builder.Services.AddTransient<IPublicPost, PublicPost>();
 builder.Services.AddTransient<IManageComment, ManageComment>();
 builder.Services.AddTransient<IManageReply, ManageReply>();
@@ -48,7 +53,7 @@ builder.Services.AddTransient<IStorageService, FileStorageService>();
 
 builder.Services.AddTransient<IValidator<LoginRequestModel>, LoginValidator>();
 
-builder.Services.AddControllers().AddFluentValidation();
+builder.Services.AddSwaggerGenNewtonsoftSupport();
 
 //Add Swagger
 builder.Services.AddSwaggerGen(options =>
@@ -57,6 +62,33 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "MoBaESport Api",
+    });
+
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+       Description = @"JWT Authorization header using the Bearer scheme. Example: \""Authorization: Bearer {token}\",
+       Name = "Authorization",
+       In = ParameterLocation.Header,
+       Type = SecuritySchemeType.Http,
+       Scheme = "Bearer" 
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header,
+            },
+            new List<string>()
+        }
     });
 });
 

@@ -1,0 +1,131 @@
+﻿@using MoBaEsport.Application.Systems.UserServiceModel
+@using MoBaEsport.Data.Enum
+@model RegisterRequestModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-register-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Input Your Information</h1>
+                                    </div>
+                                    <form class="user" asp-action="Register" asp-controller="User" method="post">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                   asp-for="Fullname" placeholder="Your FullName">
+                                            <span class="validation" asp-validation-for="Fullname" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                   asp-for="Email" aria-describedby="emailHelp"
+                                                   placeholder="Your Email">
+                                            <span class="validation" asp-validation-for="Email" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group" style="padding-left:10px">
+                                            <input type="radio" class="form-check-inline"
+                                                   asp-for="Gender" value="@GenderEnum.Male">
+                                            <label class="form-check-inline" asp-for="Gender">Male</label>
+                                            <input type="radio" class="form-check-inline"
+                                                   asp-for="Gender" value="@GenderEnum.Female">
+                                            <label class="form-check-inline" asp-for="Gender">Female</label>
+                                            <span class="validation" asp-validation-for="Gender" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" class="form-control form-control-user"
+                                                   asp-for="DOB">
+                                            <span class="validation" asp-validation-for="DOB" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                   asp-for="Phone" placeholder="Your Phone Number">
+                                            <span class="validation" asp-validation-for="Phone" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                   asp-for="UserName" placeholder="UserName">
+                                            <span class="validation" asp-validation-for="UserName" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                   asp-for="Password" placeholder="Password">
+                                            <span class="validation" asp-validation-for="Password" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                   asp-for="ConfirmPassword" placeholder="Confirm Password">
+                                            <span class="validation" asp-validation-for="ConfirmPassword" style="color:red"></span>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            Register
+                                        </button>
+                                        @if(TempData["ErrorMessage"] != null){
+                                            <span class="has-validation" style="color:red">@TempData["ErrorMessage"]</span>
+                                        }
+                                        <hr>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" asp-action="Login" asp-controller="User">Already have an account? Login!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

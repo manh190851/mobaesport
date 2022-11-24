@@ -12,6 +12,6 @@ namespace MoBaEsport.Data.EntityModel
         public List<Message>? Messages { get; set; }
         public long FriendId { get; set; }
         public Friend FriendIdInChatBox { get; set; }
-        public string ChatBoxColor { get; set; }
+        public string? ChatBoxColor { get; set; }
     }
 }

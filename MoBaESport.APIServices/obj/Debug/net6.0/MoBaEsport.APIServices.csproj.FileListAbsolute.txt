@@ -1,0 +1,17 @@
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.csproj.AssemblyReference.cache
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.AssemblyInfoInputs.cache
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.AssemblyInfo.cs
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.csproj.CoreCompileInputs.cache
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.APIServices.deps.json
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.APIServices.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.APIServices.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.Application.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.Data.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.Application.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\bin\Debug\net6.0\MoBaEsport.Data.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.csproj.CopyComplete
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\refint\MoBaEsport.APIServices.dll
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\MoBaEsport.APIServices.pdb
+C:\Users\MANH\source\repos\MOBAEsport\MoBaESport.APIServices\obj\Debug\net6.0\ref\MoBaEsport.APIServices.dll

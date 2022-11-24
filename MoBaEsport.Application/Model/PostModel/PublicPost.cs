@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MoBaEsport.Application.Systems.FileStorageService;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MoBaEsport.Application.Model.PostModel
 {
@@ -29,13 +30,12 @@ namespace MoBaEsport.Application.Model.PostModel
         {
             var post = new Post()
             {
-                PostId = model.PostId,
                 PostContent = model.PostContent,
                 Created = model.Created,
                 Status = model.Status,
                 ShareCount = model.ShareCount,
                 SharePostId = model.SharePostId,
-                UserId = model.UserId
+                UserId = model.UserId,
             };
 
             if(model.postFiles != null)
@@ -71,9 +71,9 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<long> Update(long PostId, PostUpdateModel model)
+        public async Task<long> Update(PostUpdateModel model)
         {
-            var post = db.Posts.Find(PostId);
+            var post = db.Posts.Find(model.postId);
 
             if (post == null) throw new ArgumentNullException();
 
@@ -83,7 +83,7 @@ namespace MoBaEsport.Application.Model.PostModel
 
             if (model.postFiles != null)
             {
-                var postFile = await db.PostFiles.FirstOrDefaultAsync(i => i.IsDefault == true && i.PostId == PostId);
+                var postFile = await db.PostFiles.FirstOrDefaultAsync(i => i.IsDefault == true && i.PostId == model.postId);
                 postFile.FilePath = await this.SaveFile(model.postFiles);
                 postFile.Size = model.postFiles.Length;
             }
@@ -101,8 +101,18 @@ namespace MoBaEsport.Application.Model.PostModel
 
             foreach(var post in posts)
             {
-                var postModel = await GetPost(post.PostId);
-                postViewModels.Add(postModel);
+                PostViewModel postViewModel = new PostViewModel()
+                {
+                    PostContent = post.PostContent,
+                    Status = post.Status,
+                    Created = post.Created,
+                    ShareCount = await ShareCount(post.PostId),
+                    SharePostId = post.SharePostId,
+                    UserId = userId,
+                    User = await db.Users.FindAsync(userId),
+                    Images = await this.GetPostImage(post.PostId),
+                };
+                postViewModels.Add(postViewModel);
             }
 
             return postViewModels;
@@ -117,15 +127,27 @@ namespace MoBaEsport.Application.Model.PostModel
             return await db.SaveChangesAsync();
         }
 
-        public async Task<long> ReportPost(long postId)
+        public async Task<List<PostViewModel>> ViewReportPost()
         {
-            var post = db.Posts.Find(postId);
+            var listReport = db.Posts.ToList().Where(m => m.Status == Data.Enum.PostStatus.Reporting);
 
-            if (post == null) throw new Exception("Not Found");
+            List<PostViewModel> result = new List<PostViewModel>();
 
-            post.Status = Data.Enum.PostStatus.Reporting;
-
-            return await db.SaveChangesAsync();
+            foreach (var post in listReport)
+            {
+                PostViewModel postView = new PostViewModel()
+                {
+                    PostContent = post.PostContent,
+                    Status = post.Status,
+                    Created = post.Created,
+                    ShareCount = await ShareCount(post.PostId),
+                    SharePostId = post.SharePostId,
+                    UserId = post.UserId,
+                    Images = await this.GetPostImage(post.PostId)
+                };
+                result.Add(postView);
+            }
+            return result;
         }
 
         public async Task<long> ShareCount(long postId)
@@ -185,33 +207,26 @@ namespace MoBaEsport.Application.Model.PostModel
 
             foreach(var post in posts)
             {
-                var postmodel = await GetPost(post.PostId);
-                list.Add(postmodel);
+                PostViewModel postViewModel = new PostViewModel()
+                {
+                    PostContent = post.PostContent,
+                    Status = post.Status,
+                    Created = post.Created,
+                    ShareCount = await ShareCount(post.PostId),
+                    SharePostId = post.SharePostId,
+                    UserId = post.UserId,
+                    Images = await this.GetPostImage(post.PostId),
+                };
+                list.Add(postViewModel);
             }
             return list;
         }
 
-        public async Task<long> OpenPost(long postId)
+        public async Task<IEnumerable<PostFile>>? GetPostImage(long postId)
         {
-            throw new NotImplementedException();
-        }
+            var images = db.PostFiles.ToList().Where(i => i.PostId == postId);
 
-        public async Task<PostViewModel> GetPost(long postId)
-        {
-            var post = db.Posts.Find(postId);
-            if (post == null) throw new ArgumentNullException(nameof(post));
-
-            PostViewModel postViewModel = new PostViewModel()
-            {
-                PostContent = post.PostContent,
-                Status = post.Status,
-                Created = post.Created,
-                ShareCount = await ShareCount(post.PostId),
-                SharePostId = post.SharePostId,
-                UserId = post.UserId,
-            };
-
-            return postViewModel;
+            return images;
         }
 
         public async Task<CommentViewModel> GetComment(long commentId)
@@ -245,18 +260,27 @@ namespace MoBaEsport.Application.Model.PostModel
             return reactionViewModel;
         }
 
-        public async Task<long> UpdateStatus(long postId, Data.Enum.PostStatus newStatus)
+        public async Task<long> UpdateStatus(PostUpdateModel model)
         {
-            var post = db.Posts.Find(postId);
-            Data.Enum.PostStatus k = newStatus;
+            var post = db.Posts.Find(model.postId);
+            Data.Enum.PostStatus k = model.Status;
 
             switch (k)
             {
-                case (Data.Enum.PostStatus)0:
-                    post.Status = Data.Enum.PostStatus.Public;
-                    break;
                 case (Data.Enum.PostStatus)1:
                     post.Status = Data.Enum.PostStatus.Private;
+                    break;
+                case (Data.Enum.PostStatus)2:
+                    post.Status = Data.Enum.PostStatus.Hidden;
+                    break;
+                case (Data.Enum.PostStatus)3:
+                    post.Status = Data.Enum.PostStatus.Reporting;
+                    break;
+                case (Data.Enum.PostStatus)4:
+                    post.Status = Data.Enum.PostStatus.Locked;
+                    break;
+                default:
+                    post.Status = Data.Enum.PostStatus.Public;
                     break;
             }
 
@@ -269,6 +293,40 @@ namespace MoBaEsport.Application.Model.PostModel
             var filename = $"{Guid.NewGuid()}{Path.GetExtension(originalFilename)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), filename);
             return filename;
+        }
+
+        public async Task<long> CountPost()
+        {
+            long counter = db.Posts.LongCount();
+            return counter;
+        }
+
+        public async Task<long> Share(PostShareModel model)
+        {
+            var post = db.Posts.Find(model.postId);
+            if (post == null) throw new Exception("Not found postId");
+            post.SharePostId = model.sharepostId;
+            post.SharePost = await db.Posts.FindAsync(model.sharepostId);
+            
+            await db.SaveChangesAsync();
+            return post.PostId;
+        }
+
+        public async Task<PostViewModel> GetPost(long postId)
+        {
+            var post = db.Posts.Find(postId);
+            if (post == null) throw new ArgumentNullException();
+            return new PostViewModel
+            {
+                PostId = post.PostId,
+                PostContent = post.PostContent,
+                Created = post.Created,
+                ShareCount = post.ShareCount,
+                SharePostId = post.SharePostId,
+                Status = post.Status,
+                Images = post.PostFiles,
+                UserId = post.UserId,
+            };
         }
     }
 }

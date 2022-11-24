@@ -16,15 +16,15 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
                 .WithMessage("Email format not match");
 
             RuleFor(m => m.Fullname).NotEmpty().WithMessage("FullName is requied");
-            RuleFor(m => m.Phone).NotEmpty().WithMessage("Phone is required");
-            RuleFor(m => m.DOB).GreaterThan(DateTime.Now).WithMessage("Birthday can not greater than today");
-            RuleFor(m => m.Gender).IsInEnum().WithMessage("Select in gender enum");
+            RuleFor(m => m.Phone).NotEmpty().WithMessage("Phone number is required");
+            RuleFor(m => m.Gender).NotEmpty().WithMessage("Gender is required");
+            RuleFor(m => m.DOB).NotEmpty().WithMessage("Birthday is required")
+                .LessThanOrEqualTo(DateTime.Now).WithMessage("Birthday cannot greater than today");
 
             RuleFor(m => m.UserName).NotEmpty().WithMessage("UserName is required");
             RuleFor(m => m.Password).NotEmpty().WithMessage("Password is required")
                 .MinimumLength(4).WithMessage("Password at least 4 characters");
 
-            RuleFor(m => m.ConfirmPassword).NotEqual(m => m.Password).WithMessage("Confirm password is not match");
         }
     }
 }

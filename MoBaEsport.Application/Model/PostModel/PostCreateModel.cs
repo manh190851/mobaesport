@@ -5,7 +5,6 @@ namespace MoBaEsport.Application.Model.PostModel
 {
     public class PostCreateModel
     {
-        public long PostId { get; set; }
         public string PostContent { get; set; }
         public DateTime Created { get; set; }
         public PostStatus Status { get; set; }

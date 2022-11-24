@@ -15,9 +15,6 @@ namespace MoBaEsport.Application.Model.ReplyModel
         Task<long> Update(ReplyUpdateModel model, long replyId);
 
         Task<long> Delete(Guid userId, long replyId);
-
-        Task<List<ReactionViewModel>> ViewListReaction(long replyId);
-
-        Task<ReactionViewModel> GetReaction(Reaction reactoget);
+        Task<ReplyViewModel> GetReply(long replyId);
     }
 }

@@ -12,6 +12,12 @@ namespace MoBaEsport.Application.Model.ReactionModel
     { 
         public Reactions ReacName { get; set; }
         public DateTime Created { get; set; }
+        public long CommentId { get; set; }
+        public virtual Comment? comment { get; set; }
+
+        public long PostId { get; set; }
+        public virtual Post? post { get; set; }
+
 
         public Guid UserId { get; set; }
         public AppUser User { get; set; }

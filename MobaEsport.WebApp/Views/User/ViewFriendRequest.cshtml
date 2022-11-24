@@ -1,0 +1,29 @@
+﻿@using MoBaEsport.Application.Model.FriendModel
+@model List<FriendRequestModel>
+@{
+    ViewData["Title"] = "Request List";
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Requester.Fullname
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="@Url.Action("ConfirmRequest", "User", new {friendId = item.friendId})">Accept</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

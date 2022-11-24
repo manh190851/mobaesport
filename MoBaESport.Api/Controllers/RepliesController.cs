@@ -15,7 +15,7 @@ namespace MoBaESport.Api.Controllers
             _manageReply = manageReply;
         }
 
-        [HttpPost]
+        [HttpPost("create-reply")]
         public async Task<IActionResult> Create([FromForm] ReplyCreateModel model)
         {
             var result = await _manageReply.Create(model);
@@ -25,8 +25,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("{replyId}")]
-        public async Task<IActionResult> Update([FromForm] ReplyUpdateModel model, long replyId)
+        [HttpPut("update-reply")]
+        public async Task<IActionResult> Update([FromForm] ReplyUpdateModel model, [FromQuery]long replyId)
         {
             var result = await _manageReply.Update(model, replyId);
 
@@ -35,8 +35,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("{replyId}")]
-        public async Task<IActionResult> Delete(Guid userid, long replyId)
+        [HttpDelete("delete-reply")]
+        public async Task<IActionResult> Delete([FromQuery]Guid userid, [FromQuery]long replyId)
         {
             var result = await _manageReply.Delete(userid, replyId);
 
@@ -45,10 +45,10 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("view-reply-reaction/{replyId}")]
-        public async Task<IActionResult> ViewListReaction(long replyId)
+        [HttpGet("get-reply")]
+        public async Task<IActionResult> GetReply([FromQuery]long replyId)
         {
-            var result = await _manageReply.ViewListReaction(replyId);
+            var result = await _manageReply.GetReply(replyId);
 
             if (result == null) return BadRequest();
 

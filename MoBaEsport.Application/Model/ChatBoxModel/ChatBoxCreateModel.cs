@@ -1,4 +1,6 @@
-﻿namespace MoBaEsport.Application.Model.ChatBoxModel
+﻿using MoBaEsport.Data.EntityModel;
+
+namespace MoBaEsport.Application.Model.ChatBoxModel
 {
     public class ChatBoxCreateModel
     {

@@ -15,8 +15,8 @@ namespace MoBaESport.Api.Controllers
             _managecomment = managecomment;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromForm]CommentCreateModel model)
+        [HttpPost("create-comment")]
+        public async Task<IActionResult> Create([FromBody]CommentCreateModel model)
         {
             var result = await _managecomment.Create(model);
 
@@ -25,40 +25,40 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("{commentId}")]
-        public async Task<IActionResult> Update([FromForm]CommentUpdateModel model, long commentId)
+        [HttpPut("update-comment")]
+        public async Task<IActionResult> Update([FromBody]CommentUpdateModel model)
         {
-            var result = await _managecomment.Update(model, commentId);
+            var result = await _managecomment.Update(model, model.commentId);
 
             if(result == 0) return BadRequest();
 
             return Ok(result);
         }
 
-        [HttpDelete("{commentId}")]
-        public async Task<IActionResult> Delete(Guid userid, long commentId)
+        [HttpDelete("delete-comment")]
+        public async Task<IActionResult> Delete([FromQuery] long commentId)
         {
-            var result = await _managecomment.Delete(userid, commentId);
+            var result = await _managecomment.Delete(commentId);
 
             if (result == 0) return BadRequest();
 
             return Ok(result);
         }
 
-        [HttpGet("view-reply/{commentId}")]
-        public async Task<IActionResult> ViewListReply(long commentId)
+        [HttpGet("view-reply")]
+        public async Task<IActionResult> ViewListReply([FromQuery] long commentId)
         {
-            var result = await _managecomment.ViewListReply(commentId);
+            var result = await _managecomment.GetReplies(commentId);
 
             if(result == null) return BadRequest();
 
             return Ok(result);
         }
 
-        [HttpGet("view-comment-reaction/{commentId}")]
-        public async Task<IActionResult> ViewListReaction(long commentId)
+        [HttpGet("view-comment-reaction")]
+        public async Task<IActionResult> ViewListReaction([FromQuery]long commentId)
         {
-            var result = await _managecomment.ViewListReaction(commentId);
+            var result = await _managecomment.GetReaction(commentId);
 
             if (result == null) return BadRequest();
 

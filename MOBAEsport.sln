@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoBaEsport.Data", "MoBaEspo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoBaEsport.Application", "MoBaEsport.Application\MoBaEsport.Application.csproj", "{D462AE90-7271-40FD-BD42-AD3D3AD1687E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoBaESport.Api", "MoBaESport.Api\MoBaESport.Api.csproj", "{23DCECF6-C378-4C60-847A-A159EEDB8794}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoBaEsport.Api", "MoBaESport.Api\MoBaEsport.Api.csproj", "{23DCECF6-C378-4C60-847A-A159EEDB8794}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminAreas", "AdminAreas\AdminAreas.csproj", "{429BC9B3-AB98-4430-85AE-DFCEE5103BF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoBaEsport.APIServices", "MoBaESport.APIServices\MoBaEsport.APIServices.csproj", "{EAA0B842-264F-43F9-8E12-B6A05601166B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{23DCECF6-C378-4C60-847A-A159EEDB8794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23DCECF6-C378-4C60-847A-A159EEDB8794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23DCECF6-C378-4C60-847A-A159EEDB8794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429BC9B3-AB98-4430-85AE-DFCEE5103BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429BC9B3-AB98-4430-85AE-DFCEE5103BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429BC9B3-AB98-4430-85AE-DFCEE5103BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429BC9B3-AB98-4430-85AE-DFCEE5103BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA0B842-264F-43F9-8E12-B6A05601166B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA0B842-264F-43F9-8E12-B6A05601166B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA0B842-264F-43F9-8E12-B6A05601166B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA0B842-264F-43F9-8E12-B6A05601166B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

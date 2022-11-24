@@ -5,7 +5,7 @@ namespace MoBaEsport.Data.EntityModel
     public class Post
     {
         public long PostId { get; set; }
-        public string PostContent { get; set; }
+        public string? PostContent { get; set; }
         public DateTime Created { get; set; }
         public PostStatus Status { get; set; }
         public bool IsHidden { get; set; }

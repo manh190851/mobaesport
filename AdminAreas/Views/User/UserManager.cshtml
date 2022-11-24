@@ -1,0 +1,64 @@
+﻿@using MoBaEsport.Application.Systems.UserServiceModel
+@model List<UserManagerModel>
+@{
+    ViewData["Title"] = "User Manager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>UserName</th>
+                        <th>FullName</th>
+                        <th>Gender</th>
+                        <th>Date Of Birth</th>
+                        <th>Phone</th>
+                        <th>Nation</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>User Status</th>
+                        <th>Login Status</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>UserName</th>
+                        <th>FullName</th>
+                        <th>Gender</th>
+                        <th>Date Of Birth</th>
+                        <th>Phone</th>
+                        <th>Nation</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>User Status</th>
+                        <th>Login Status</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td>@item.Fullname</td>
+                            <td>@item.Gender</td>
+                            <td>@item.DOB</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Nation</td>
+                            <td>@item.City</td>
+                            <td>@item.Email</td>
+                            <td>@item.userStatus</td>
+                            <td>@item.loginStatus</td>
+                            <td><a href="@Url.Action("UserProfile", "User", new {userId = item.Id})">View</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

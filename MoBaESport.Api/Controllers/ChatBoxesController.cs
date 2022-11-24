@@ -15,8 +15,8 @@ namespace MoBaESport.Api.Controllers
             _manageChatBox = manageChatBox;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromForm] ChatBoxCreateModel model)
+        [HttpPost("create-chatbox")]
+        public async Task<IActionResult> Create([FromBody] ChatBoxCreateModel model)
         {
             var result = await _manageChatBox.Create(model);
 
@@ -25,8 +25,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("{ChatBoxId}")]
-        public async Task<IActionResult> Delete(Guid userid, long ChatBoxId)
+        [HttpDelete("delete-chatbox")]
+        public async Task<IActionResult> Delete([FromQuery]Guid userid, [FromQuery]long ChatBoxId)
         {
             var result = await _manageChatBox.Delete(ChatBoxId);
 
@@ -35,8 +35,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ViewChatBox(long chatboxId)
+        [HttpGet("get-chatbox")]
+        public async Task<IActionResult> GetChatBox([FromQuery]long chatboxId)
         {
             var result = await _manageChatBox.ViewChatBox(chatboxId);
 

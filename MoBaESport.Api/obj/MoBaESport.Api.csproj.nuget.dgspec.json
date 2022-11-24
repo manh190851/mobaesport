@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaESport.Api.csproj": {}
+    "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaEsport.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaESport.Api.csproj": {
+    "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaEsport.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaESport.Api.csproj",
-        "projectName": "MoBaESport.Api",
-        "projectPath": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaESport.Api.csproj",
+        "projectUniqueName": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaEsport.Api.csproj",
+        "projectName": "MoBaEsport.Api",
+        "projectPath": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\MoBaEsport.Api.csproj",
         "packagesPath": "C:\\Users\\MANH\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\MANH\\source\\repos\\MOBAEsport\\MoBaESport.Api\\obj\\",
         "projectStyle": "PackageReference",
@@ -52,6 +52,10 @@
               "version": "[11.2.2, )"
             },
             "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Newtonsoft": {
               "target": "Package",
               "version": "[6.4.0, )"
             }

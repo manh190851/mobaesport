@@ -1,0 +1,14 @@
+﻿@using MoBaEsport.Application.Model.PostModel
+@model List<PostViewModel>
+@if(ViewData["NoPost"] != null){
+    <h2>@ViewData["NoPost"]</h2>
+}
+else{
+    foreach (var item in Model)
+    {
+        <div class="form-control">
+            <h2>@item.User.Fullname</h2>
+            <p>@item.Created</p>
+        </div>
+    }
+}

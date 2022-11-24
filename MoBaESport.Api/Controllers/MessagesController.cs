@@ -15,8 +15,8 @@ namespace MoBaESport.Api.Controllers
             _manageMessage = manageMessage;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromForm]MessageCreateModel model)
+        [HttpPost("create-message")]
+        public async Task<IActionResult> Create([FromBody]MessageCreateModel model)
         {
             var result = await _manageMessage.Create(model);
 
@@ -25,8 +25,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(Guid userId, long messageId)
+        [HttpDelete("delete-message")]
+        public async Task<IActionResult> Delete([FromQuery]Guid userId, [FromQuery]long messageId)
         {
             var result = await _manageMessage.Delete(userId, messageId);
 

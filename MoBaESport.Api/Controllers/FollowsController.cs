@@ -15,22 +15,32 @@ namespace MoBaESport.Api.Controllers
             _manageFollow = managefollow;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromForm] FollowCreateModel model)
+        [HttpPost("create-follow")]
+        public async Task<IActionResult> Create([FromBody] FollowCreateModel model)
         {
             var result = await _manageFollow.Create(model);
 
-            if (result == 0) return BadRequest();
+            if (result == false) return BadRequest();
 
             return Ok(result);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(Guid userId, long followId)
+        [HttpDelete("delete-follow")]
+        public async Task<IActionResult> Delete([FromQuery]long followId)
         {
-            var result = await _manageFollow.Delete(userId, followId);
+            var result = await _manageFollow.Delete(followId);
 
-            if (result == 0) return BadRequest();
+            if (result == false) return BadRequest();
+
+            return Ok(result);
+        }
+
+        [HttpGet("find-follow")]
+        public async Task<IActionResult> FindFollow([FromQuery] Guid targetId, [FromQuery] Guid userId)
+        {
+            var result = await _manageFollow.GetFollow(targetId, userId);
+
+            if (result == null) return BadRequest();
 
             return Ok(result);
         }

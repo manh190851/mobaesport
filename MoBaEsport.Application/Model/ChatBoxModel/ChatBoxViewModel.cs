@@ -10,6 +10,7 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
 {
     public class ChatBoxViewModel
     {
+        public long chatboxId { get; set; }
         public List<MessageViewModel>? Messages { get; set; }
 
         public string color { get; set; }

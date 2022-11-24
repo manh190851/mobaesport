@@ -66,9 +66,9 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
             return messageViewModel;
         }
 
-        public async Task<ChatBoxViewModel> ViewChatBox(long chatboxid)
+        public async Task<ChatBoxViewModel> ViewChatBox(long chatboxId)
         {
-            var chatbox = db.ChatBox.Find(chatboxid);
+            var chatbox = db.ChatBox.Find(chatboxId);
 
             if (chatbox == null) throw new Exception();
 
@@ -76,7 +76,7 @@ namespace MoBaEsport.Application.Model.ChatBoxModel
             {
                 FriendId = chatbox.FriendId,
                 FriendIdInChatBox = chatbox.FriendIdInChatBox,
-                Messages = await GetListMessage(chatboxid),
+                Messages = await GetListMessage(chatbox.ChatBoxId),
                 color = chatbox.ChatBoxColor
             };
             return chatboxViewModel;

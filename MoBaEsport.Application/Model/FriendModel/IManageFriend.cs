@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MoBaEsport.Application.Systems.UserServiceModel;
+using MoBaEsport.Data.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +12,11 @@ namespace MoBaEsport.Application.Model.FriendModel
     {
         Task<long> CreateRequest(FriendCreateModel model);
 
-        Task<long> Delete(Guid userId, long friendId);
+        Task<long> Delete(long friendId);
 
-        Task<long> AccepRequest(long friendId);
+        Task<long> ConfirmRequest(long friendId);
+        Task<List<FriendRequestModel>> GetFriendRequest(Guid userId);
+        Task<List<FriendViewModel>> GetListFriend(Guid userId);
+        Task<Friend> GetFriend(Guid userId, Guid targetId);
     }
 }
