@@ -14,12 +14,13 @@ namespace MoBaEsport.Data.Configuration
 
             builder.Property(m => m.Created).IsRequired();
             builder.Property(m => m.Status).IsRequired().HasConversion<string>();
-            builder.Property(m => m.PostContent);
+            builder.Property(m => m.PostContent).IsRequired(false);
             builder.Property(m => m.IsHidden).HasDefaultValue(false);
             builder.Property(m => m.ShareCount);
-            builder.Property(m => m.SharePostId);
+            builder.Property(m => m.SharePostId).IsRequired(false);
 
             builder.HasOne(m => m.User).WithMany(m => m.Posts).HasForeignKey(m => m.UserId);
+            builder.HasOne(m => m.game).WithMany(m => m.postGame).HasForeignKey(m => m.gameId);
         }
     }
 }

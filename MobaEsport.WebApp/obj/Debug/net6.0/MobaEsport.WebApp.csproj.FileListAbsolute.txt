@@ -570,7 +570,6 @@ C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\bin\Debug\net6.0\MoBaEsp
 C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\bin\Debug\net6.0\MoBaEsport.Data.dll
 C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\bin\Debug\net6.0\MoBaEsport.Application.pdb
 C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\bin\Debug\net6.0\MoBaEsport.Data.pdb
-C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\obj\Debug\net6.0\MobaEsport.WebApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\obj\Debug\net6.0\MobaEsport.WebApp.csproj.CopyComplete
 C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\bin\Debug\net6.0\MoBaEsport.APIServices.dll
 C:\Users\MANH\source\repos\MOBAEsport\MobaEsport.WebApp\bin\Debug\net6.0\MoBaEsport.APIServices.pdb

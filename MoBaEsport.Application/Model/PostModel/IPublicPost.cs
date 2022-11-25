@@ -25,7 +25,7 @@ namespace MoBaEsport.Application.Model.PostModel
         Task<CommentViewModel> GetComment(long commentId);
         Task<ReactionViewModel> GetReaction(long reactionId);
         Task<long> CountPost();
-        Task<long> Share(PostShareModel model);
+        Task<long> Share(PostCreateModel model);
         Task<PostViewModel> GetPost(long postId);
     }
 }

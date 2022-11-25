@@ -19,9 +19,10 @@ namespace MoBaEsport.Application.Model.MessageModel
 
         public async Task<long> Create(MessageCreateModel model)
         {
+            var checking = await this.isUserInChatBox(model.SenderId, model.ChatBoxId);
+            if (!checking) throw new Exception("Sender not in this chat box");
             var message = new Message()
             {
-                MessageId = model.MessageId,
                 Content = model.Content,
                 ChatBoxId = model.ChatBoxId,
                 SenderId = model.SenderId,
@@ -44,6 +45,19 @@ namespace MoBaEsport.Application.Model.MessageModel
             db.Messages.Remove(message);
 
             return await db.SaveChangesAsync();
+        }
+
+        public async Task<bool> isUserInChatBox(Guid userId, long chatboxId)
+        {
+            var chatbox = db.ChatBox.Find(chatboxId);
+            if (chatbox == null) throw new Exception("chat box not found");
+            var friend = db.Friends.Find(chatbox.FriendId);
+            if (friend == null) throw new Exception("friend not found");
+            if (userId == friend.RequestId || userId == friend.AcceptId)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

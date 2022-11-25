@@ -17,5 +17,7 @@ namespace MoBaEsport.Data.EntityModel
         public Guid UserId { get; set; }
         public AppUser User { get; set; }
         public List<PostFile> PostFiles { get; set; }
+        public long? gameId { get; set; }
+        public Game? game { get; set; }
     }
 }

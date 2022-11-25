@@ -109,5 +109,23 @@ main {
     display: none !important;
   }
 }
+ul.list-friend {
+    padding:20px;
+}
+
+
+li.item-name {
+    margin-right: 500px;
+    display: inline;
+}
+
+li.item-control {
+    display: inline;
+}
+
+
+
+
+
 
 /*# sourceMappingURL=index.css.map */

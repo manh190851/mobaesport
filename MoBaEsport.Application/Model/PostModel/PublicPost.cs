@@ -36,6 +36,8 @@ namespace MoBaEsport.Application.Model.PostModel
                 ShareCount = model.ShareCount,
                 SharePostId = model.SharePostId,
                 UserId = model.UserId,
+                gameId = model.gameId,
+                game = await db.Games.FindAsync(model.gameId)
             };
 
             if(model.postFiles != null)
@@ -301,12 +303,22 @@ namespace MoBaEsport.Application.Model.PostModel
             return counter;
         }
 
-        public async Task<long> Share(PostShareModel model)
+        public async Task<long> Share(PostCreateModel model)
         {
-            var post = db.Posts.Find(model.postId);
-            if (post == null) throw new Exception("Not found postId");
-            post.SharePostId = model.sharepostId;
-            post.SharePost = await db.Posts.FindAsync(model.sharepostId);
+            var post = new Post()
+            {
+                PostContent = model.PostContent,
+                Created = model.Created,
+                Status = model.Status,
+                IsHidden = model.IsHidden,
+                gameId = model.gameId,
+                game = await db.Games.FindAsync(model.gameId),
+                ShareCount = model.ShareCount,
+                SharePostId = model.SharePostId,
+                UserId = model.UserId,
+
+            };
+            db.Posts.Add(post);
             
             await db.SaveChangesAsync();
             return post.PostId;

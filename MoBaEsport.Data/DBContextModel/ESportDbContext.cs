@@ -26,6 +26,9 @@ namespace MoBaEsport.Data.DBContextModel
         public DbSet<Follow> Follows { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<PostFile> PostFiles { get; set; }
+        public DbSet<Game> Games { get; set; }
+
+        public DbSet<GamePlayer> GamePlayers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -48,6 +51,8 @@ namespace MoBaEsport.Data.DBContextModel
             builder.ApplyConfiguration(new MessageConfiguration()); //Message
             builder.ApplyConfiguration(new ChatBoxConfiguration()); //ChatBox
             builder.ApplyConfiguration(new PostFileConfiguration()); //Postfile
+            builder.ApplyConfiguration(new GameConfiguration()); //Game
+            builder.ApplyConfiguration(new GamePlayerConfiguration()); //GamePlayer
         }
     }
 }

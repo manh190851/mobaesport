@@ -136,7 +136,7 @@ namespace MoBaEsport.APIServices
         {
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(_configuration["BaseAddress"]);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await client.GetAsync($"/api/Friends/get-list-friend/?userId={userId}");
             var body = await response.Content.ReadAsStringAsync();
             var request = JsonConvert.DeserializeObject<List<FriendViewModel>>(body);

@@ -1,23 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MoBaEsport.APIServices;
+using MoBaEsport.Application.Model.MessageModel;
 
 namespace MobaEsport.WebApp.Controllers
 {
     public class ChatBoxController : Controller
     {
-        private readonly IRelationshipAPI _relationshipAPI;
         private readonly IChatBoxAPI _chatBoxAPI;
 
-        public ChatBoxController(IRelationshipAPI relationshipAPI, IChatBoxAPI chatBoxAPI)
+        public ChatBoxController(IChatBoxAPI chatBoxAPI)
         {
-            _relationshipAPI = relationshipAPI;
             _chatBoxAPI = chatBoxAPI;
         }
 
-        public IActionResult Index(long chatboxId)
+        public async Task<IActionResult> CreateMessage(MessageCreateModel model)
         {
-            var chatBox = _chatBoxAPI.GetChatBox(chatboxId);
-            return View(chatBox);
+            throw new NotImplementedException();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace MobaEsport.WebApp.Controllers
     {
         private readonly IPostAPI _postApi;
         private readonly IConfiguration _configuration;
-        private string bearerToken = "";
 
         public PostController(IPostAPI postApi, IConfiguration configuration)
         {

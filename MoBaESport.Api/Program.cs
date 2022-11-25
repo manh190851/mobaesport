@@ -8,6 +8,7 @@ using MoBaEsport.Application.Model.ChatBoxModel;
 using MoBaEsport.Application.Model.CommentModel;
 using MoBaEsport.Application.Model.FollowModel;
 using MoBaEsport.Application.Model.FriendModel;
+using MoBaEsport.Application.Model.GameModel;
 using MoBaEsport.Application.Model.MessageModel;
 using MoBaEsport.Application.Model.PostModel;
 using MoBaEsport.Application.Model.ReactionModel;
@@ -50,6 +51,7 @@ builder.Services.AddTransient<Microsoft.AspNetCore.Identity.UserManager<AppUser>
 builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IStorageService, FileStorageService>();
+builder.Services.AddTransient<IManageGame, ManageGame>();
 
 builder.Services.AddTransient<IValidator<LoginRequestModel>, LoginValidator>();
 

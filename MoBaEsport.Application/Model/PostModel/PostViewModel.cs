@@ -15,5 +15,7 @@ namespace MoBaEsport.Application.Model.PostModel
         public IEnumerable<PostFile>? Images { get; set; }
         public Guid UserId { get; set; }
         public virtual AppUser User { get; set; }
+        public long gameId { get; set; }
+        public virtual Game game { get; set; }
     }
 }

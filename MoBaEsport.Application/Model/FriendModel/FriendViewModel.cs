@@ -9,6 +9,8 @@ namespace MoBaEsport.Application.Model.FriendModel
 {
     public class FriendViewModel
     {
+        public long friendId { get; set; }
+
         public Guid Id { get; set; }
 
         public AppUser Friend { get; set; }

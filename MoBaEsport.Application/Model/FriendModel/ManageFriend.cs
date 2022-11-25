@@ -83,12 +83,14 @@ namespace MoBaEsport.Application.Model.FriendModel
 
             List<FriendViewModel> listbyRequest = new List<FriendViewModel>();
             List<FriendViewModel> listbyAccept = new List<FriendViewModel>();
+            List<FriendViewModel> result = new List<FriendViewModel>();
 
             foreach(var item in list)
             {
                 if(item.RequestId == userId) {
                     listbyRequest.Add(new FriendViewModel
                     {
+                        friendId = item.FriendId,
                         Id = item.AcceptId,
                         Friend = await db.Users.FindAsync(item.AcceptId)
                     });
@@ -96,13 +98,17 @@ namespace MoBaEsport.Application.Model.FriendModel
                 if (item.AcceptId == userId) {
                     listbyAccept.Add(new FriendViewModel
                     {
+                        friendId = item.FriendId,
                         Id = item.RequestId,
                         Friend = await db.Users.FindAsync(item.RequestId)
                     });
                 }
             }
 
-            return (List<FriendViewModel>) listbyAccept.Concat<FriendViewModel>(listbyRequest);
+            result.AddRange(listbyAccept);
+            result.AddRange(listbyRequest);
+
+            return result;
         }
 
         public async Task<Friend> GetFriend(Guid userId, Guid targetId)

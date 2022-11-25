@@ -113,6 +113,7 @@ namespace MobaEsport.WebApp.Controllers
         {
             bearerToken += HttpContext.Session.GetString(tokenKey);
             var user = await _userApi.GetProfile(userId, bearerToken);
+            user.friendList = await _relationshipAPI.GetFriendList(userId, bearerToken);
             return View(user);
         }
 
@@ -265,7 +266,7 @@ namespace MobaEsport.WebApp.Controllers
         public async Task<Friend> GetFriendObject(Guid userId, Guid targetId)
         {
             bearerToken += HttpContext.Session.GetString(tokenKey);
-            var result = await _relationshipAPI.GetFriend(userId, targetId);
+            var result = await _relationshipAPI.GetFriend(userId, targetId, bearerToken);
             return result;
         }
 

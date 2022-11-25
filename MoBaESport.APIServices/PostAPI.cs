@@ -140,7 +140,7 @@ namespace MoBaEsport.APIServices
             return false;
         }
 
-        public async Task<bool> Share(PostShareModel model)
+        public async Task<bool> Share(PostCreateModel model)
         {
             var json = JsonConvert.SerializeObject(model);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");

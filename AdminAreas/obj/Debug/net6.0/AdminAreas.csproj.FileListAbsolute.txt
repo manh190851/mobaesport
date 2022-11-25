@@ -394,7 +394,6 @@ C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\ru\Microsoft.C
 C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\obj\Debug\net6.0\AdminAreas.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\Humanizer.dll
 C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\MessagePack.dll
 C:\Users\MANH\source\repos\MOBAEsport\AdminAreas\bin\Debug\net6.0\MessagePack.Annotations.dll

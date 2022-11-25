@@ -344,6 +344,46 @@ namespace MoBaEsport.Data.Migrations
                     b.ToTable("Friends", (string)null);
                 });
 
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.Game", b =>
+                {
+                    b.Property<long>("gameId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("gameId"), 1L, 1);
+
+                    b.Property<DateTime>("createDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("gameName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("isActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.HasKey("gameId");
+
+                    b.ToTable("Games", (string)null);
+                });
+
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.GamePlayer", b =>
+                {
+                    b.Property<Guid>("playerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<long>("gameId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("playerId", "gameId");
+
+                    b.HasIndex("gameId");
+
+                    b.ToTable("GamePlayers", (string)null);
+                });
+
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Message", b =>
                 {
                     b.Property<long>("MessageId")
@@ -406,11 +446,16 @@ namespace MoBaEsport.Data.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<long?>("gameId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("PostId");
 
                     b.HasIndex("SharePostId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("gameId");
 
                     b.ToTable("Posts", (string)null);
                 });
@@ -584,6 +629,25 @@ namespace MoBaEsport.Data.Migrations
                     b.Navigation("RequestUser");
                 });
 
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.GamePlayer", b =>
+                {
+                    b.HasOne("MoBaEsport.Data.EntityModel.Game", "game")
+                        .WithMany("players")
+                        .HasForeignKey("gameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MoBaEsport.Data.EntityModel.AppUser", "player")
+                        .WithMany("GamePlay")
+                        .HasForeignKey("playerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("game");
+
+                    b.Navigation("player");
+                });
+
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Message", b =>
                 {
                     b.HasOne("MoBaEsport.Data.EntityModel.ChatBox", "ChatBox")
@@ -615,9 +679,15 @@ namespace MoBaEsport.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MoBaEsport.Data.EntityModel.Game", "game")
+                        .WithMany("postGame")
+                        .HasForeignKey("gameId");
+
                     b.Navigation("SharePost");
 
                     b.Navigation("User");
+
+                    b.Navigation("game");
                 });
 
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.PostFile", b =>
@@ -689,6 +759,8 @@ namespace MoBaEsport.Data.Migrations
 
                     b.Navigation("Following");
 
+                    b.Navigation("GamePlay");
+
                     b.Navigation("Posts");
 
                     b.Navigation("Reactions");
@@ -716,6 +788,13 @@ namespace MoBaEsport.Data.Migrations
                 {
                     b.Navigation("ChatBox")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MoBaEsport.Data.EntityModel.Game", b =>
+                {
+                    b.Navigation("players");
+
+                    b.Navigation("postGame");
                 });
 
             modelBuilder.Entity("MoBaEsport.Data.EntityModel.Post", b =>

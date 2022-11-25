@@ -144,18 +144,10 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
                 Email = user.Email,
                 City = user.City,
                 Nation = user.Nation,
-                ImageUrl = user.ImageUrl,
-                friendList = await GetListFriend(userId)
+                ImageUrl = user.ImageUrl
             };
 
             return profile;
-        }
-
-        private async Task<List<Friend>> GetListFriend(Guid userId)
-        {
-            var friend = (List<Friend>) _db.Friends.ToList().Where(i => (i.RequestId == userId || i.AcceptId == userId) && i.Status == Data.Enum.FriendStatus.Friend);
-            if(friend == null) throw new ArgumentNullException();
-            return friend;
         }
 
         public Task<bool> IsLockedUser()
@@ -227,6 +219,30 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
                 result.Add(userView);
             }
             return result;
+        }
+
+        public async Task<List<Game>> GetGamePlay(Guid userId)
+        {
+            var gameplays = _db.GamePlayers.ToList().Where(i => i.playerId == userId);
+            List<Game> result = new List<Game>();
+            foreach(var gameplay in gameplays)
+            {
+                var game = await _db.Games.FindAsync(gameplay.gameId);
+                result.Add(game);
+            }
+            return result;
+        }
+
+        public async Task<bool> AccessGamePlay(long gameId, Guid userId)
+        {
+            var gameplayers = new GamePlayer()
+            {
+                gameId = gameId,
+                playerId = userId,
+            };
+            _db.GamePlayers.Add(gameplayers);
+            await _db.SaveChangesAsync();
+            return true;
         }
     }
 }

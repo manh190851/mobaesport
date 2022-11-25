@@ -29,7 +29,7 @@ namespace MoBaEsport.APIServices
 
         Task<bool> CreatePostRport(PostReportModel model);
 
-        Task<bool> Share(PostShareModel model);
+        Task<bool> Share(PostCreateModel model);
 
         Task<long> CountPost();
 

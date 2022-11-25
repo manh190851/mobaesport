@@ -12,9 +12,9 @@ namespace MoBaEsport.APIServices
 
         Task<bool> DeleteComment(long commentId);
 
-        Task<List<ReactionViewModel>> GetReaction(long commentId);
+        Task<List<ReactionViewModel>> GetListReaction(long commentId);
         
-        Task<List<ReplyViewModel>> GetReply(long commentId);
+        Task<List<ReplyViewModel>> GetListReply(long commentId);
 
 
     }

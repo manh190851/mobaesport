@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoBaEsport.Data.EntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,8 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
 
         Task<bool> UpdateProfile(Guid id, UserUpdateModel model);
         Task<List<UserViewModel>> GetSearchingUser(string key);
+        Task<List<Game>> GetGamePlay(Guid userId);
+        Task<bool> AccessGamePlay(long gameId, Guid userId);
 
         
     }

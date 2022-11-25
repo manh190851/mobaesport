@@ -43,7 +43,7 @@ namespace MoBaEsport.APIServices
             return false;
         }
 
-        public async Task<List<ReactionViewModel>> GetReaction(long commentId)
+        public async Task<List<ReactionViewModel>> GetListReaction(long commentId)
         {
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(_configuration["BaseAddress"]);
@@ -55,7 +55,7 @@ namespace MoBaEsport.APIServices
             return result;
         }
 
-        public async Task<List<ReplyViewModel>> GetReply(long commentId)
+        public async Task<List<ReplyViewModel>> GetListReply(long commentId)
         {
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(_configuration["BaseAddress"]);

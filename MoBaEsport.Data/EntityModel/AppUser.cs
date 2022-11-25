@@ -29,8 +29,8 @@ namespace MoBaEsport.Data.EntityModel
         public List<Reaction>? Reactions { get; set; }
         public List<Reply>? Replys { get; set; }
         public List<Message>? SendMessage { get; set; }
-        //public List<ChatBox>? OwnerChatBoxes { get; set; }
-        //public List<ChatBox>? ChatBoxes { get; set; }
+        public List<GamePlayer>? GamePlay { get; set; }
+
 
     }
 }

@@ -103,8 +103,8 @@ namespace MoBaESport.Api.Controllers
             return Ok(counter);
         }
 
-        [HttpPut("share-post")]
-        public async Task<IActionResult> SharePost([FromQuery] PostShareModel model)
+        [HttpPost("share-post")]
+        public async Task<IActionResult> SharePost([FromBody] PostCreateModel model)
         {
             var result = await _publicPost.Share(model);
             if(result == 0) return BadRequest();

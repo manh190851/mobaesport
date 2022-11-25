@@ -14,6 +14,9 @@ namespace MoBaEsport.Data.Configuration
 
             builder.Property(m => m.ReacName).IsRequired().HasMaxLength(20);
             builder.Property(m => m.Created).IsRequired();
+            builder.Property(m => m.PostId).IsRequired(false);
+            builder.Property(m => m.ComId).IsRequired(false);
+            builder.Property(m => m.ReplyId).IsRequired(false);
 
             builder.HasOne(m => m.Post).WithMany(m => m.Reactions).HasForeignKey(m => m.PostId);
             builder.HasOne(m => m.Comment).WithMany(m => m.Reactions).HasForeignKey(m => m.ComId);

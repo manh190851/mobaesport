@@ -21,6 +21,6 @@ namespace MoBaEsport.APIServices
         Task<bool> ConfirmRequest(long friendId, string token);
         Task<bool> DeleteRequest(long friendId, string token);
         Task<List<FriendViewModel>> GetFriendList(Guid userId, string token);
-        Task<Friend> GetFriend(Guid userId, Guid targetId);
+        Task<Friend> GetFriend(Guid userId, Guid targetId, string token);
     }
 }

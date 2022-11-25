@@ -1,4 +1,5 @@
-﻿using MoBaEsport.Data.EntityModel;
+﻿using MoBaEsport.Application.Model.FriendModel;
+using MoBaEsport.Data.EntityModel;
 using MoBaEsport.Data.Enum;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,6 @@ namespace MoBaEsport.Application.Systems.UserServiceModel
         public LoginStatus LoginStatus { get; set; }
         public UserStatus UserStatus { get; set; }
         public string Email { get; set; }
-        public List<Friend> friendList { get; set; }
+        public List<FriendViewModel> friendList { get; set; }
     }
 }

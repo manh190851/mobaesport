@@ -10,6 +10,7 @@ namespace MoBaESport.Api.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private const string find_user_error = "User Not Found";
 
         public UsersController(IUserService userService)
         {
@@ -51,7 +52,7 @@ namespace MoBaESport.Api.Controllers
         {
             var users = await _userService.GetListUser();
 
-            if (User == null) return BadRequest();
+            if (users == null) return BadRequest(find_user_error);
 
             return Ok(users);
         }
@@ -61,7 +62,7 @@ namespace MoBaESport.Api.Controllers
         {
             var user = await _userService.GetUserProfile(userId);
 
-            if (user == null) { return BadRequest(); }
+            if (user == null) { return BadRequest(find_user_error); }
 
             return Ok(user);
         }
@@ -86,9 +87,27 @@ namespace MoBaESport.Api.Controllers
         {
             if(userId == Guid.Empty) { return BadRequest("Id is Empty!"); }
             var user = await _userService.GetUserById(userId);
-            if(user == null) { return BadRequest("User Not Found!"); }
+            if(user == null) { return BadRequest(find_user_error); }
             return Ok(user);
 
+        }
+
+        [HttpGet("get-game-playing")]
+        public async Task<IActionResult> GetGamePlay([FromQuery] Guid userId)
+        {
+            if (userId == Guid.Empty) return BadRequest(find_user_error);
+            var result = await _userService.GetGamePlay(userId);
+            if (result == null) return BadRequest("result not found");
+            return Ok(result);
+        }
+
+        [HttpPost("access-game")]
+        public async Task<IActionResult> AccessGamePlay([FromQuery] long gameId, [FromQuery] Guid userId)
+        {
+            if (userId == Guid.Empty) return BadRequest(find_user_error);
+            var result = await _userService.AccessGamePlay(gameId, userId);
+            if (result == false) return BadRequest("Access failed");
+            return Ok(result);
         }
 
     }

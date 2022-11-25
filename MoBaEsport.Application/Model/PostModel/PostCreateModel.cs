@@ -5,7 +5,7 @@ namespace MoBaEsport.Application.Model.PostModel
 {
     public class PostCreateModel
     {
-        public string PostContent { get; set; }
+        public string? PostContent { get; set; }
         public DateTime Created { get; set; }
         public PostStatus Status { get; set; }
         public bool IsHidden { get; set; }
@@ -13,5 +13,6 @@ namespace MoBaEsport.Application.Model.PostModel
         public long? SharePostId { get; set; }
         public Guid UserId { get; set; }
         public IFormFile postFiles { get; set; }
+        public long gameId { get; set; }
     }
 }
